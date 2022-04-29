@@ -8,7 +8,7 @@ function NavBar() {
                 <ul className="navBarUl">
                 <li><a href="https://reactjs.org">Inicio</a></li>
                 <li><a href="https://reactjs.org">Porductos</a></li>
-                <li><a href="https://reactjs.org">Sobre nosotors</a></li>
+                <li><a href="https://reactjs.org">Sobre mi</a></li>
                 <li><a href="https://reactjs.org">Contacto</a></li>
                 </ul>
                 <div className="linea"></div>

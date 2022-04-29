@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navBar';
+import Footer from './components/footer.js';
 
 function App() {
   const estilos = {fontSize:15}
   return (
     <div className="App">
+      
       <NavBar />
       <header className="App-header" style={estilos}>
         
@@ -22,7 +24,7 @@ function App() {
           hola mundo
         </a>
       </header>
-      
+      <Footer />
     </div>
   );
 }
