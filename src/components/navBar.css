@@ -1,14 +1,6 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing:  border-box;
-}
-body {
-    background-color: red;
-    font-family: "calibri";
-}
+/* paleta: FF461. FFCB3A. S11D47. 343B3C. 1E2425.   https://www.nosotros-los-diseñadores.com/wp-content/uploads/2019/11/minimal-colors-by-dumma-branding-7.jpg*/
 .navBar {
-    background-color: #600167;
+    background-color: rgb(12, 1, 174);
     width: 100%;
     clear: both;
     content: "";
@@ -37,13 +29,14 @@ body {
     height: 5px;
     top: 0;
     position: absolute;
-    transition: width 0.2;
+    transition: width 0.4;
 }
 .navBarUl li a:hover::before {
     width: 100%;
 }
 .linea {
-    border-top: 6px solid black;
+    border-top: 4px solid black;
+    box-shadow: 0 20px 20px 26px rgba(14, 14, 14, 0.794);
     height: 2px;
     padding: 0;
     margin: 65px auto 0;
