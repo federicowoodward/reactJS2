@@ -1,3 +1,42 @@
-h1 {
-    color: red;
+.container {
+    background-color: rgba(0, 0, 0, 0.504);
+    min-height: 100vh;
+    min-width: 203vh;
+    margin: 20px 0;
+    border: 3px solid;
+    border-color: rgb(19, 19, 19);
+    box-shadow: -2px -44px 173px -45px rgba(27,3,3,0.75) inset;
+    -webkit-box-shadow: -2px -44px 173px -45px rgba(27,3,3,0.75) inset;
+    -moz-box-shadow: -2px -44px 173px -45px rgba(27,3,3,0.75) inset;
+}
+.boxpapa {  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    align-content: stretch;
+    justify-items: center;
+    grid-template-areas:
+      "box1 box2 box3"
+      "box4 box5 box6";
+    
+  }
+  
+  .box1 { grid-area: box1; }
+  
+  .box2 { grid-area: box2; }
+  
+  .box3 { grid-area: box3; }
+  
+  .box4 { grid-area: box4; }
+
+  .box5 { grid-area: box5; }
+
+  .box6 { grid-area: box6; }
+  
+.box {
+    background-color: rgb(133, 133, 133);
+    width: 200px;
+    height: 200px;
+    margin: 5px;
 }

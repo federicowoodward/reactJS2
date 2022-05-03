@@ -3,6 +3,7 @@ import NavBar from './components/navBar';
 import Footer from './components/footer.js';
 import Contenedor from './components/itemListContainer.js';
 
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,8 @@ function App() {
       <Footer/>
 
     </div>
-  );
+    
+  )
 }
 
 export default App;
