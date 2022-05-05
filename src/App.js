@@ -3,24 +3,21 @@ import NavBar from './components/navBar';
 import Footer from './components/footer.js';
 import Contenedor from './components/itemListContainer.js';
 
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      
-      <NavBar/>
-
-      <header className="App-header">
-        
-       <Contenedor/>
-        
-      </header>
-
-      <Footer/>
-
+    <div>
+      <nav>
+         <NavBar/>
+      </nav>
+      <body>
+        <Contenedor/>
+      </body>
+      <footer>
+         <Footer/>
+      </footer>
     </div>
     
   )
 }
 
-export default App;
+

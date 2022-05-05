@@ -1,5 +1,5 @@
 import "./cartWidget.css";
-import Carrito from "../components/componentsAssets/carrito";
+import Carrito from "../assets/carrito.js";
 
 
 export default function CartWidget() {
