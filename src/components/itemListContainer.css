@@ -22,44 +22,35 @@
   }
   .box1 { 
     grid-area: box1;
-    background-image: url(https://i.ibb.co/2qnPSmn/DSC07538.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
   .box2 { 
     grid-area: box2;
-    background-image: url(https://i.ibb.co/2qnPSmn/DSC07538.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
 }
   .box3 { 
     grid-area: box3;
-    background-image: url(https://i.ibb.co/2qnPSmn/DSC07538.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
 }  
   .box4 { 
     grid-area: box4;
-    background-image: url(https://i.ibb.co/2qnPSmn/DSC07538.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
 }
   .box5 { 
     grid-area: box5;
-    background-image: url(https://i.ibb.co/2qnPSmn/DSC07538.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
 }
   .box6 { 
     grid-area: box6;
-    background-image: url(https://i.ibb.co/2qnPSmn/DSC07538.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
 }
 .box {
-    background-color: rgb(133, 133, 133);
     width: 200px;
     height: 200px;
-    margin: 15px;
-    font-size: calc(10px + 2vmin);
 }

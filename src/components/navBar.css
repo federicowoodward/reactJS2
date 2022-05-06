@@ -1,7 +1,9 @@
 /* paleta: FF461. FFCB3A. S11D47. 343B3C. 1E2425.   https://www.nosotros-los-diseñadores.com/wp-content/uploads/2019/11/minimal-colors-by-dumma-branding-7.jpg*/
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 .navBar {
-    background-color: hsla(264, 91%, 49%, 0.601);
+    background-color: rgba(0, 0, 0, 0.675);
+    height: 60px;
     width: 100%;   
     clear: both;
     content: "";
@@ -12,23 +14,23 @@
 }
 .navBarUl li {
     list-style: none;
-    margin-right: 25px;
+    margin-right: 40px;
     padding: 17px 0;
     float: left;
     position: relative;
 }
 .navBarUl li a {
     text-decoration: none;
-    color: rgb(144, 144, 144);
-    font-family: 'Cinzel', serif;
+    color: #fff;
+    font-family: 'Koulen', cursive;
     font-size: 17px;
 }
 .navBarUl li a::before {
     display: block;
     content: "";
-    background: rgb(144, 144, 144);
+    background: #fff;
     height: 5px;
-    top: 0;
+    bottom: 0;
     position: absolute;
     transition: width 0.4;
 }
@@ -41,7 +43,7 @@
     left: 20px;
 }
 .name a {
-    color: black;
+    color: #fff;
     text-decoration: none;
 }
 
