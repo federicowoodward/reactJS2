@@ -8,49 +8,8 @@
     -webkit-box-shadow: -2px -44px 173px -45px rgba(27,3,3,0.75) inset;
     -moz-box-shadow: -2px -44px 173px -45px rgba(27,3,3,0.75) inset;
 }
-.boxpapa {      
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    align-content: stretch;
-    justify-items: center;
-    grid-template-areas:
-      "box1 box2 box3"
-      "box4 box5 box6";
-  }
-  .box1 { 
-    grid-area: box1;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-  .box2 { 
-    grid-area: box2;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-  .box3 { 
-    grid-area: box3;
-    background-repeat: no-repeat;
-    background-size: cover;
-}  
-  .box4 { 
-    grid-area: box4;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-  .box5 { 
-    grid-area: box5;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-  .box6 { 
-    grid-area: box6;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.box {
-    width: 200px;
-    height: 200px;
+.boxpapa {
+  padding: 10vh;
+  margin: auto;
+  width: 500px;
 }

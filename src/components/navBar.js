@@ -5,8 +5,9 @@ export default function NavBar() {
     return (
         <div >
             <div className="navBar"> 
-                <div className="name">
-                    {/* <a href="index.html"><h2>Franco Peña </h2></a> */}
+                <div className="logoNav">
+                <img src="https://i.ibb.co/FsvLdjd/1624241171268.png" alt="1624241171268" height="85px" />
+                    
                 </div>
                 <ul className="navBarUl">
                     <li><a href="https://reactjs.org">Inicio</a></li>

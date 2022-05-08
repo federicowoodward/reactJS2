@@ -23,7 +23,7 @@
     text-decoration: none;
     color: #fff;
     font-family: 'Koulen', cursive;
-    font-size: 17px;
+    font-size: 20px;
 }
 .navBarUl li a::before {
     display: block;
@@ -37,13 +37,9 @@
 .navBarUl li a:hover::before {
     width: 100%;
 }
-.name {
-    position: fixed;
-    top: 14px;
-    left: 20px;
-}
-.name a {
-    color: #fff;
-    text-decoration: none;
+.logoNav {
+    width: 1px;
+    height: 1px;
+    margin: 5px 0 0 30px;
 }
 
