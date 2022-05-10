@@ -1,10 +1,8 @@
 import './App.css';
 import NavBar from './components/navBar';
 import Footer from './components/footer.js';
-
 import Contenedor from './components/itemListContainer.js';
 import Landing from './components/landing.js';
-// import Contador from './components/itemCount.js';
 
 export default function App() {
 

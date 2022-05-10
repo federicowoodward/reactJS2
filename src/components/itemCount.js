@@ -3,41 +3,36 @@ import React, { useState } from 'react';
 import "./cartWidget.css";
 import Carrito from "../assets/carrito.js";
 
+const ItemCount = ({initial ,cuentaParametro}) => {
 
+    const [count, setCount] = useState(initial);
 
-export default function BotonContador() {
-    const stockFotos = 5;
-    const [count, setCount] = useState(0);
+    let resta = false;
+    let botonResta = document.getElementById("restar");
+
+    const hacerCuenta = (cuenta) => {
+        if (cuenta == "+") {
+            setCount (count + 1);
+            mostrarBoton();
+        } else if (cuenta == "-") {
+            setCount (count - 1);
+            resta = true;
+            mostrarBoton();
+        }
+    }
+
+    const mostrarBoton = () => {
+        resta = false ? botonResta.style.display = "none" : botonResta.style.display = "block"; 
+    }
+ 
+    hacerCuenta(cuentaParametro); 
 
     return (
-        <div className="botonContador">
-            <p className="contador"> {count}</p>
-            <button 
-                className="btnMas"
-                onClick={() => {
-                    if ( count < stockFotos) {
-                        setCount(count + 1);
-                    } else {
-                        alert("No hay stock suficiente")
-                    }
-                }}
-                >
-                +
-            </button>
-            <button 
-                className="btnMen"
-                onClick={() => {
-                    if (count == 0) {
-                        alert("no puede ser menos de 0")
-                    } else {
-                    setCount(count - 1);}
-                }}
-                >
-                -
-            </button>
-            <button className="botonFotos">
+        <button className="botonFotos">
             < Carrito/>
-            </button>
-        </div>
-    );
+        </button>
+    )
+
 }
+
+export default ItemCount;
