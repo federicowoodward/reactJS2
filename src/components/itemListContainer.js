@@ -1,29 +1,31 @@
 import "./itemListContainer.css";
-import Contador from './itemCount';
-import ItemList from './itemList'
+import { picsList } from "../data/data.js";
+import ItemList from './itemList';
+import { useEffect, useState } from "react";
 
-export default function Container() { 
+const getProducts = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve(picsList);
+  }, 2000);
+});
 
-  let demoraSimulada = new Promise((resolve, reject) => {
+export default function ItemListContainer (){
+  const [picsList, setPicsList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    setTimeout(function(){
+  useEffect(() => {
+    getProducts
+      .then((resp) => {
+        setPicsList(resp);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
-      resolve( <ItemList /> );
-      reject( alert("No se pudieron encontrar las fotos"));
-
-    }, 2000);
-  });
-
-  
-
-    return (
-      <div className="fotoContainer">
-        <div className="foto">
-
-        </div>
-            {/* <div>{greeting}</div> */}
-            
-            <Contador stock={5} inicial={1}/>
-      </div>  
-    );
-}
+  return (
+    <section className="item-list-container">
+      <div>
+        {loading ? <h2>Cargando fotos...</h2> : <ItemList products={picsList} />}
+      </div>
+    </section>
+  );
+};

@@ -1,36 +1,35 @@
 import "./itemCount.css";
 import React, { useState } from 'react';
 import "./cartWidget.css";
-import Carrito from "../assets/carrito.js";
 
-const ItemCount = ({initial ,cuentaParametro}) => {
+const ItemCount = ({initial}) => {
 
     const [count, setCount] = useState(initial);
 
     let resta = false;
-    let botonResta = document.getElementById("restar");
 
-    const hacerCuenta = (cuenta) => {
-        if (cuenta == "+") {
+    const operation = (cuenta) => {
+        if (cuenta === "+") {
             setCount (count + 1);
-            mostrarBoton();
-        } else if (cuenta == "-") {
+        } else if (cuenta === "-") {
             setCount (count - 1);
             resta = true;
-            mostrarBoton();
         }
     }
 
-    const mostrarBoton = () => {
-        resta = false ? botonResta.style.display = "none" : botonResta.style.display = "block"; 
-    }
- 
-    hacerCuenta(cuentaParametro); 
 
     return (
-        <button className="botonFotos">
-            < Carrito/>
-        </button>
+        <div className="botonFotos">
+            <span className="fotosAñadidas">
+                <p>Fotos añadidas: {count}</p>
+            </span>
+            <button className="btnMas" onClick={operation("+")}>
+                +
+            </button>
+            <button className="btnMen" onClick={operation("-")} display={resta ? "block" : "none"}>
+                -
+            </button>
+        </div>
     )
 
 }

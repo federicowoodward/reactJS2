@@ -1,5 +1,6 @@
 import "./navBar.css";
-// import CartWidget from "./CartWidget.js";
+import CartWidget from "../assets/carrito.js";
+import "./cartWidget.css"
 
 export default function NavBar() {
     return (
@@ -14,7 +15,7 @@ export default function NavBar() {
                     <li><a href="https://reactjs.org">Fotos</a></li>
                     <li><a href="https://reactjs.org">Sobre mi</a></li>
                     <li><a href="https://reactjs.org">Contacto</a></li>
-                    {/* < CartWidget /> */}
+                    < CartWidget className="carrito"/>
                 </ul>
             </div>
         </div>
