@@ -2,7 +2,7 @@ import React from 'react';
 import ItemCount from './itemCount.js';
 import './item.css';
 
-const Item = ({ imgUrl, stock, client, alt}) => {
+const Item = ({ imgUrl, client, alt}) => {
 
   return (
     <article className="fotoCard">
