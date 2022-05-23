@@ -1,18 +1,11 @@
+import React from 'react';
 import "../data/data.js";
-import Item from './item';
+import Item from './item.js';
 
-const ItemList = (picsList) => {
-
+const ItemList = ({ picsList }) => {
+  let photo = []; 
     return (
-        
-       picsList.map((photo) => (
-        <Item
-        id={photo.id}
-        imgUrl={photo.imgUrl}
-        stock={photo.stock}
-        client={photo.client}
-        alt={photo.alt}
-        />
+      picsList.map(item => ( <Item photos={ photo }/>
       ))
     );
 }

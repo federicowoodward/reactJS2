@@ -1,14 +1,22 @@
 import ItemDetail from "./../itemDetail/itemDetail.js";
 import { useState, useEffect } from "react";
+import { picsList } from "../../data/data.js";
 
 export default function ItemDetailContainer () {
     const [loading, setLoading] = useState(true)
+    const [item, setItem] = useState({})
+
     const getItem = () => {
         new Promise((resolve) => {
             setTimeout(() => {
-                resolve(setLoading(false));
+                resolve(picsList);
+                
               }, 2000);
             });
+    getItem.then =(res) => {
+        setItem(res[0]);
+        setLoading(false);
+    }        
     } 
     
     return (
@@ -16,14 +24,7 @@ export default function ItemDetailContainer () {
             { loading ?
                 <h2>Cargando...</h2>
                 :
-                <div>
-                    { img.map((img) => <div>
-                        <ItemDetail
-                            id = {img.id}
-                        />
-                    </div>) 
-                    }
-                </div>
+                < ItemDetail itemDetail={item}/>
             }
         </div>
     );

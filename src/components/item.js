@@ -2,12 +2,12 @@ import React from 'react';
 import ItemCount from './itemCount.js';
 import './item.css';
 
-const Item = ({ imgUrl, client, alt}) => {
+const Item = ({ photo }) => {
 
   return (
     <article className="fotoCard">
-        <img className="fotoImg" src={imgUrl} alt={alt} />
-        <p className="fotoClient">${client}</p>
+        <img className="fotoImg" src={photo.imgUrl} alt={photo.alt} />
+        <p className="fotoClient">${photo.client}</p>
       <ItemCount initial={1}/>
       
     </article>

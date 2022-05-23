@@ -1,8 +1,8 @@
 import "./itemCount.css";
 import React, { useState } from 'react';
-import "./cartWidget.css";
+import Cart from "./cart.js";
 
-const ItemCount = ({initial}) => {
+export default function ItemCount({initial}) {
 
     const [count, setCount] = useState(initial);
 
@@ -22,6 +22,7 @@ const ItemCount = ({initial}) => {
         <div className="botonFotos">
             <span className="fotosAñadidas">
                 <p>Fotos añadidas: {count}</p>
+                <Cart/>
             </span>
             <button className="btnMas" onClick={operation("+")}>
                 +
@@ -34,4 +35,3 @@ const ItemCount = ({initial}) => {
 
 }
 
-export default ItemCount;
