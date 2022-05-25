@@ -1,16 +1,16 @@
 import React from 'react';
-import ItemCount from './itemCount.js';
 import './item.css';
 
 const Item = ({ photo }) => {
 
   return (
-    <article className="fotoCard">
+    <div className="item">
         <img className="fotoImg" src={photo.imgUrl} alt={photo.alt} />
         <p className="fotoClient">${photo.client}</p>
-      <ItemCount initial={1}/>
-      
-    </article>
+        {/* <Link to={`/itemDetail/${el.id}`}>
+                    <button className="item__addBtn" >Agregar al pedido</button>
+        </Link> */}
+    </div>
   );
 };
 

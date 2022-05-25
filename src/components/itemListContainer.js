@@ -1,30 +1,26 @@
-import "./itemListContainer.css";
-import { picsList } from "../data/data.js";
 import ItemList from './itemList';
 import { useEffect, useState } from "react";
+import "./itemListContainer.css";
+import { useParams } from "react-router-dom";
 
-const getProducts = new Promise((resolve) => {
-  setTimeout(() => {
-    resolve(picsList);
-  }, 2000);
-});
 
 export default function ItemListContainer (){
   const [picsList, setPicsList] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const {id} = useParams();
   useEffect(() => {
-    getProducts
+      fetch("/data/data.js")
       .then((resp) => {
         setPicsList(resp);
       })
+      .catch(err => console.log(err))
       .finally(() => setLoading(false));
   }, []);
 
   return (
     <section className="item-list-container">
       <div>
-        {loading ? <h2>Cargando fotos...</h2> : <ItemList products={picsList} />}
+        {loading ? <h2>Cargando fotos...</h2> : <ItemList picsList={picsList} id={id} />}
       </div>
     </section>
   );
