@@ -9,9 +9,11 @@ export default function ItemListContainer (){
   const [loading, setLoading] = useState(true);
   const {id} = useParams();
   useEffect(() => {
-      fetch("/data/data.js")
+      fetch("/data/data.json")
+      .then((resp) => resp.json()) 
       .then((resp) => {
         setPicsList(resp);
+        console.log(resp);
       })
       .catch(err => console.log(err))
       .finally(() => setLoading(false));

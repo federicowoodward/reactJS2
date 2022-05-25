@@ -1,21 +1,21 @@
-export const picsList = [
+[
 {
     "id": 1,
-    "imgUrl": "/images/IMG_9576.jpg",
+    "imgUrl": "https://www.seguroscatalanaoccidente.com/blog/assets/multimedia/2016/04/bicicleta-fixie.jpg",
     "client": "martina",
     
     "alt": "este alt es temporal"
 },
 {
     "id": 2,
-    "imgUrl": "/images/IMG_9755.jpg",
+    "imgUrl": "https://www.seguroscatalanaoccidente.com/blog/assets/multimedia/2016/04/bicicleta-fixie.jpg",
     "client": "martina",
     
     "alt": "este alt es temporal"
 },
 {
     "id": 3,
-    "imgUrl": "/images/IMG_9579.jpg",
+    "imgUrl": "https://www.seguroscatalanaoccidente.com/blog/assets/multimedia/2016/04/bicicleta-fixie.jpg",
     "client": "martina",
     
     "alt": "este alt es temporal"

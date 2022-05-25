@@ -5,7 +5,7 @@ const Item = ({ photo }) => {
 
   return (
     <div className="item">
-        <img className="fotoImg" src={photo.imgUrl} alt={photo.alt} />
+        <img className="fotoImg" src={photo.imgUrl} alt="" />
         <p className="fotoClient">${photo.client}</p>
         {/* <Link to={`/itemDetail/${el.id}`}>
                     <button className="item__addBtn" >Agregar al pedido</button>
