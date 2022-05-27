@@ -1,9 +1,9 @@
 import React from 'react';
 import Item from './item.js';
+import "./itemList.css";
 
 
 const ItemList = ({ picsList, id }) => {
-    console.log(picsList)
     return (
       <div className="container">
         { id?

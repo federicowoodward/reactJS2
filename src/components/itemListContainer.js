@@ -13,17 +13,14 @@ export default function ItemListContainer (){
       .then((resp) => resp.json()) 
       .then((resp) => {
         setPicsList(resp);
-        console.log(resp);
       })
       .catch(err => console.log(err))
-      .finally(() => setLoading(false));
+      .finally( setTimeout(() => setLoading(false), 2500) );
   }, []);
 
   return (
-    <section className="item-list-container">
       <div>
         {loading ? <h2>Cargando fotos...</h2> : <ItemList picsList={picsList} id={id} />}
       </div>
-    </section>
   );
 };

@@ -6,6 +6,7 @@ import Container from './components/itemListContainer.js';
 import Landing from './components/landing.js';
 import Introduction from "./components/introduce.js";
 import Contact from "./components/contact.js";
+import ItemDetailContainer from "./components/itemDetail/itemDetailContainer.js";
 
 export default function App() {
 
@@ -13,16 +14,17 @@ export default function App() {
     <BrowserRouter>
         <div>
           <NavBar/>
+         
           <Routes>
             <Route path="/" element = { < Landing />} />
             <Route path="/landing" element = { < Landing />} />
             <Route path="/introduce.js" element = { < Introduction />} />
             <Route path="/pics" element = { < Container />} />
             <Route path="/contact" element = { < Contact />} />
-
+            <Route path="/detail/:id" element = { <ItemDetailContainer />} />
             <Route path="/*" element = { <Navigate to="/" replace /> } />
           </Routes>
-          <Footer/>
+          <Footer/> 
         </div>
     </BrowserRouter>
   )

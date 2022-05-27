@@ -10,7 +10,6 @@ export default function ItemCount({initial}) {
     const sumar = () => setCount(count+1);
     const restar = () => { setCount(count-1); setBoton(true) }
 
-
     return (
         <div className="botonFotos">
             <span className="fotosAñadidas"><p>{count}</p></span>
