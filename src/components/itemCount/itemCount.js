@@ -1,8 +1,9 @@
 import "./itemCount.css";
 import React, { useState } from 'react';
-import Cart from "./cart.js";
+import Cart from "../../assets/cart.js";
+import { Link } from "react-router-dom";
 
-export default function ItemCount({initial}) {
+export default function ItemCount({initial ,id}) {
 
     const [count, setCount] = useState(initial);
     const [boton, setBoton] = useState(false);
@@ -16,6 +17,9 @@ export default function ItemCount({initial}) {
             <Cart/>
             <button className="btnMas" onClick={sumar}> + </button>
             <button className="btnMen" onClick={restar} display={boton ? "block" : "none"}> - </button>
+            <Link to={`/item/${id}`}>
+            <button>Agregar al pedido</button>
+            </Link>
         </div>
     )
 
