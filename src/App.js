@@ -21,8 +21,8 @@ export default function App() {
                 <Routes>
                 <Route path="/" element={<ItemListContainer/>} />
                 <Route path="/category/:id" element={<ItemListContainer/>} />
-                <Route path="/item/:id" element={<ItemDetailContainer/>} />
-                <Route path="/*" element = { <Navigate to="/" replace /> } />
+                <Route path="/category/itemdetail/:id" element={<ItemDetailContainer/>} />
+                {/* <Route path="/*" element = { <Navigate to="/" replace /> } /> */}
 
                 {/* Rutas extra del nav para completar nav */}
                 <Route path="/introduce.js" element = { < Introduction />} />

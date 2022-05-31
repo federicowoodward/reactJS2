@@ -13,10 +13,10 @@ export default function NavBar() {
                 <div>
                     <ul className="navBarUl">
                         <li><Link to="/category/autos">autos</Link></li>
-                        <li><Link to="/category/fiesta">fiesta</Link></li>
+                        <li><Link to="/category/Fiesta">fiesta</Link></li>
                         <li><Link to="/category/otros">otros</Link></li>
                         <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="pics">Fotos</Link></li>
+                        <li><Link to="/category/autos">Fotos</Link></li>
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
                     </ul>

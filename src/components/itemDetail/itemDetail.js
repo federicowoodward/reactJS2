@@ -1,3 +1,4 @@
+import "./itemDetail.css";
 export default function ItemDetail({photo}) {
     return (
         <div className="itemDetail">
