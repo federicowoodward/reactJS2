@@ -3,7 +3,7 @@ import { useState} from "react";
 
 export const CartContext = createContext([])
 
-const CartContextProvider = ({children}) => {
+const CartContext = ({children}) => {
     const [photosList, setPhotoList] = useState([])
 
     return (
@@ -16,4 +16,4 @@ const CartContextProvider = ({children}) => {
 
 } 
 
-export default CartContextProvider;
+export default CartContext;

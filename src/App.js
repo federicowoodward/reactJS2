@@ -7,16 +7,17 @@ import ItemDetailContainer from "./components/itemDetailContainer/itemDetailCont
 import Landing from './components/landing/landing.js';
 import Introduction from "./components/introduce/introduce.js";
 import Contact from "./components/contact/contact.js";
-import { CartContext } from "./context/CartContext.js";
+// import CartContextProvider from "./context/CartContext.js";
 
 export default function App() {
 
+
   return (
     <BrowserRouter>
-        <CartContext.Provider>
+        {/* <CartContextProvider value={{}}> */}
             <div>
-                <NavBar/>
 
+                <NavBar/>
                 <Routes>
                 <Route path="/" element={<ItemListContainer/>} />
                 <Route path="/category/:id" element={<ItemListContainer/>} />
@@ -30,8 +31,9 @@ export default function App() {
                 </Routes>
 
                 <Footer/> 
+
             </div>
-        </CartContext.Provider>
+        {/* </CartContextProvider> */}
       </BrowserRouter>
   )
 }

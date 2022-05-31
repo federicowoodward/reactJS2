@@ -7,7 +7,7 @@ export default function ItemDetailContainer() {
     const [photo,setPhoto] = useState({});
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
-    
+    id.toString()
     useEffect(() => {
         fetch("/data/data.json")
         .then(resp => resp.json())
@@ -15,12 +15,11 @@ export default function ItemDetailContainer() {
         .then(data => setPhoto(data))
         .catch(err => console.error(err))
         .finally( setTimeout(() => setLoading(false), 2000) );
-    },[]);
-    
-    
+    },[id]);
+
     return (
         <div>
-            { loading ? <h4>Esperando respuesta</h4> : <ItemDetail photo={photo[id]}/>}
+            { loading ? <h4>Esperando respuesta</h4> : <ItemDetail photo={photo}/>}
         </div>
     );
 };

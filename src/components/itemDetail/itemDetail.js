@@ -1,5 +1,4 @@
 export default function ItemDetail({photo}) {
-
     return (
         <div className="itemDetail">
             <img className="itemDetailImg" src={photo.imgUrl} alt="" />
