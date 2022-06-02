@@ -5,7 +5,7 @@ export default function BuyButtons() {
     return (
         <div className="buyButtons">
             <Link to='/cart'>
-                <button className="buyButtonsCart">Ver pedido</button>
+                <button className="buyButtonsCart">Ver carrito</button>
             </Link>
             <Link to='/'>
                 <button className="buyButtonsMenu">Volver al menú</button>
@@ -14,3 +14,4 @@ export default function BuyButtons() {
     );
 
 }
+

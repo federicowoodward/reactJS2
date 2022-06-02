@@ -10,9 +10,6 @@ export default function ItemDetailContainer() {
     const {id} = useParams();
     let idSplit = id.split('_');
   
-    function onAdd (quantity, added) {
-        console.log(`La foto ${added} a sido agregada ${quantity} veces`)
-    }
 
     useEffect(() =>{
         const db = getFirestore()
@@ -25,7 +22,7 @@ export default function ItemDetailContainer() {
 
     return (
         <div>
-            { loading ? <h4 className="cargando">Esperando respuesta</h4> : <ItemDetail photo={photo} onAdd={onAdd}/>}
+            { loading ? <h4 className="cargando">Esperando respuesta</h4> : <ItemDetail photo={photo}/>}
         </div>
     );
 };

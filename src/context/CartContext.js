@@ -1,19 +1,35 @@
-import { createContext } from "react";  
-import { useState} from "react";
+import { createContext, useContext, useState } from "react";  
 
-export const CartContext = createContext([])
+const cartContext = createContext([]);
 
-const CartContext = ({children}) => {
+export function UseCartContext() {
+    return useContext(cartContext);
+}
+
+export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([])
 
+    function addToCart(item) {
+        setPhotoList([
+            ...photosList,
+            item]);
+    }
+
+    function clearCart() {
+        setPhotoList([])
+    }
+
+    // function clearPhoto(id) {
+    //     no lista
+    // }
+
     return (
-        <CartContext.Provider values={{
-            photosList 
+        <cartContext.Provider value={{
+            photosList,
+            addToCart,
+            clearCart
         }}>
             {children}
-        </CartContext.Provider> 
-    )
-
+        </cartContext.Provider> 
+    );
 } 
-
-export default CartContext;

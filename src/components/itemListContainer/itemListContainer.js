@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./itemListContainer.css";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where} from "firebase/firestore";
+import Loader from '../loader/loader.js';
 
 
 export default function ItemListContainer (){
@@ -11,28 +12,27 @@ export default function ItemListContainer (){
     const {id} = useParams();
 
 
-    function onAdd(cant) {
-    console.log(cant)
-    }
-  
+ 
+    
     useEffect(() => {
  
-        const db2 = getFirestore()
-        const queryCollection = query(collection(db2, "autos"), where("category", "==", `${id}`));
+        const db = getFirestore()
+        const queryCollection = collection(db,"autos");
+        const queryCollectionFilter = id === "photos" ?  query(collection(db, "autos"), where("category", "==", `${id}`)) : queryCollection;
        
-        getDocs(queryCollection)
+        getDocs(queryCollectionFilter)
         .then ( resp => {
             if (resp.size === 0) {
                 console.log("no results!");
             } else {
             setPicsList( resp.docs.map(item => ({id: item.id, ...item.data()})))}})
         .catch(err => console.log(err))
-        .finally(setLoading(false));
+        .finally(setTimeout(() => setLoading(false), 2000));
     },[id])
 
     return (
         <div>
-        {loading ? <h2 className="cargando"> Cargando fotos...</h2> : <ItemList picsList={picsList} id={id} onAdd={onAdd}/>}
+        {loading ? <Loader/> : <ItemList picsList={picsList} id={id}/>}
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import CartContextProv from "./context/CartContext.js";
 import NavBar from './components/navBar/navBar';
 import Footer from './components/footer/footer.js';
 import ItemListContainer from './components/itemListContainer/itemListContainer.js'; 
@@ -8,14 +9,13 @@ import Landing from './components/landing/landing.js';
 import Introduction from "./components/introduce/introduce.js";
 import Contact from "./components/contact/contact.js";
 import Cart from "./components/cart/cart.js";
-// import CartContextProvider from "./context/CartContext.js";
 
 export default function App() {
 
 
   return (
     <BrowserRouter>
-        {/* <CartContextProvider value={{}}> */}
+        <CartContextProv value={{}}>
             <div>
 
                 <NavBar/>
@@ -35,7 +35,7 @@ export default function App() {
                 <Footer/> 
 
             </div>
-        {/* </CartContextProvider> */}
+        </CartContextProv>
       </BrowserRouter>
   )
 }
