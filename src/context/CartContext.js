@@ -9,10 +9,21 @@ export function UseCartContext() {
 export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([])
 
+    function isItCart(id){
+        return photosList.some(photo => photo.id === id)
+    }
+
     function addToCart(item) {
-        setPhotoList([
-            ...photosList,
-            item]);
+        if (isItCart(item.id)) {
+            let i = photosList.findIndex(photo => photo.id === item.id)
+            const newList = photosList;
+            newList[i].quantity += item.quantity;
+            setPhotoList(newList);
+        } else {
+              setPhotoList([
+                  ...photosList,
+                  item]);
+        }
     }
 
     function clearCart() {

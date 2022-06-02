@@ -1,20 +1,19 @@
-import React from 'react';
 import Item from '../item/item.js';
+import React from 'react';
 import "./itemList.css";
 
 
-const ItemList = ({ picsList, id, onAdd }) => {
+export default function ItemList({ picsList, id}){
     return (
       <div className="container">
         { id?
-        picsList.filter(photo => photo.category === id).map((photo) => <Item key={photo.id} photo={photo} onAdd={onAdd}/>)
+        picsList.filter(photo => photo.category === id).map((photo) => <Item key={photo.id} photo={photo}/>)
         :
-        picsList.map((photo) => <Item key={photo.id} photo={photo} onAdd={onAdd}/>)
+        picsList.map((photo) => <Item key={photo.id} photo={photo}/>)
         }
       </div>
     );
 }
-export default ItemList;
             
             
             

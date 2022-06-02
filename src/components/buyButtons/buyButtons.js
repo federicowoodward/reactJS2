@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 export default function BuyButtons() {
-    
     return (
         <div className="buyButtons">
             <Link to='/cart'>
@@ -12,6 +11,5 @@ export default function BuyButtons() {
             </Link>
         </div>
     );
-
 }
 

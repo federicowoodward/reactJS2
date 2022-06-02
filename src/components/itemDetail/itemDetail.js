@@ -1,19 +1,17 @@
-import "./itemDetail.css";
+import { UseCartContext } from "../../context/CartContext.js";
 import { useState } from "react";
 import BuyButtons from "../buyButtons/buyButtons.js";
 import ItemCount from "../itemCount/itemCount.js";
-import { UseCartContext } from "../../context/CartContext.js";
+import "./itemDetail.css";
 
 export default function ItemDetail({photo}) {
 
     const [inputType, setInputType] = useState("itemCount");
 
-    const {addToCart, photosList} = UseCartContext();
+    const {addToCart} = UseCartContext();
 
-    function onAdd (quantity, added) {
-        console.log(`La foto ${added} a sido agregada ${quantity} veces`)
+    function onAdd (quantity) {
         addToCart({photo, quantity})
-        console.log(photosList)
     }
 
     function handleInputType() {
