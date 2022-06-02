@@ -7,6 +7,7 @@ import ItemDetailContainer from "./components/itemDetailContainer/itemDetailCont
 import Landing from './components/landing/landing.js';
 import Introduction from "./components/introduce/introduce.js";
 import Contact from "./components/contact/contact.js";
+import Cart from "./components/cart/cart.js";
 // import CartContextProvider from "./context/CartContext.js";
 
 export default function App() {
@@ -21,10 +22,11 @@ export default function App() {
                 <Routes>
                 <Route path="/" element={<ItemListContainer/>} />
                 <Route path="/category/:id" element={<ItemListContainer/>} />
+                <Route path="/:id" element = { < ItemListContainer />} />
                 <Route path="/category/itemdetail/:id" element={<ItemDetailContainer/>} />
-                {/* <Route path="/*" element = { <Navigate to="/" replace /> } /> */}
+                <Route path="/*" element = { <Navigate to="/" replace /> } />
+                <Route path="/cart" element = { < Cart />} />
 
-                {/* Rutas extra del nav para completar nav */}
                 <Route path="/introduce.js" element = { < Introduction />} />
                 <Route path="/contact" element = { < Contact />} />
                 <Route path="/landing" element = { < Landing />} />
