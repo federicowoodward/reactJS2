@@ -19,13 +19,13 @@ export default function ItemListContainer (){
             if (resp.size === 0) {
                 console.log("no results!");
             } else {
-            setPicsList( resp.docs.map(item => ({id: item.id, ...item.data()})))}})
-        .catch(err => console.log(err))
+                setPicsList( resp.docs.map(item => ({id: item.id, ...item.data()})))}})
+                .catch(err => console.log(err))
         .finally(setTimeout(() => setLoading(false), 2000));
     },[id])
     return (
         <div>
-        {loading ? <Loader/> : <ItemList picsList={picsList} id={id}/>}
+        {loading ? <Loader/> : <ItemList picsList={picsList} id={id} />}
         </div>
     );
 };

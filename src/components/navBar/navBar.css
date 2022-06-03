@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 .navBar {
-    background-color: rgba(0, 0, 0, 0.675);
+    background-color: rgb(28, 1, 136);
     height: 60px;
     width: 100%;   
     clear: both;

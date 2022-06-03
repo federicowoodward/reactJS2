@@ -7,10 +7,10 @@
     height: 7em;
     text-align: center;
 }
-h4 {
+.h4footer {
     text-align: center;
     padding-top:1em;
-    color:rgb(0, 0, 0);
+    color: black;
 }
 .iconosFooter {
     display: flex;

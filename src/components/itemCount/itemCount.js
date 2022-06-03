@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Cart from "../../assets/cart.js";
 import "./itemCount.css";
 
 export default function ItemCount({initial , stock, handleInputType}) {
@@ -14,7 +13,6 @@ export default function ItemCount({initial , stock, handleInputType}) {
     return (
         <div className="botonFotos">
             <span className="fotosAñadidas"><p>{count}</p></span>
-            <Cart/>
             <button className="btnMas" onClick={add}> + </button>
             <button className="btnMen" onClick={less}> - </button>
             <button onClick={addToCart}> Añadir al carrito </button>
