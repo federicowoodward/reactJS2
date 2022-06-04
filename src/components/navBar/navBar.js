@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CartPhoto from "../../assets/Cart.js";
+import CartPhoto from "../../assets/CartPhoto.js";
 import "./navBar.css";
 
 export default function NavBar() {
