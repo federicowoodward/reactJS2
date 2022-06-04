@@ -10,15 +10,10 @@ export default function ItemDetail({photo}) {
 
     const {addToCart} = UseCartContext();
 
-    function onAdd (quantity) {
+    function onAdd(quantity) {
         addToCart({photo, quantity})
-    }
-
-    function handleInputType() {
         setInputType("buyButtons");
     }
-
-
 
     return (
         <div className="itemDetail">
@@ -29,7 +24,7 @@ export default function ItemDetail({photo}) {
                 <p className="itemDetailDetail">{photo.alt}</p>
             </div>
         { inputType === "itemCount" ?
-        <ItemCount photo={photo} initial={1} stock={3} onAdd={onAdd} handleInputType={handleInputType}/>
+        <ItemCount initial={1} stock={3} onAdd={onAdd} />
         :
         <BuyButtons/> }
         </div>
