@@ -8,7 +8,8 @@ export function UseCartContext() {
 
 export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([]);
-    const [photosAdded, addPhoto] = useState(0);
+    const [photosPrice, addPricePhoto] = useState(0);
+    const [photosQuantityAdedd, setQA] = useState(0)
 
     function isInCart(id){
         return photosList.some(photo => photo.photo.id === id)
@@ -38,9 +39,14 @@ export default function CartContextProv({children}){
 
     function udapteCart(array) {
         setPhotoList(array);
-        let result = array.map(item => item.quantity*item.photo.price);
-        result.reduce((a,b) => a + b, 0);
-        addPhoto(result);
+        let result = array.map(item => item.quantity*item.photo.price)
+        let resultReduce = result.reduce((a,b) => a + b, 0);
+        addPricePhoto(resultReduce);
+        let QA = 0;
+        for(let i = 0; i < array.length; i++) {
+            QA += array[i].quantity;
+        }
+        setQA(QA);
     }
     
 
@@ -51,7 +57,8 @@ export default function CartContextProv({children}){
             addToCart,
             clearCart,
             clearPhoto,
-            photosAdded
+            photosPrice,
+            photosQuantityAdedd
         }}>
             {children}
         </cartContext.Provider> 

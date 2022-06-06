@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CartPhoto from "../../assets/CartPhoto.js";
+import QA from "../cart/qa.js";
 import "./navBar.css";
 
 export default function NavBar() {
@@ -21,6 +22,7 @@ export default function NavBar() {
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
                         <li><Link to="/cart"><CartPhoto/></Link></li>
+                        < QA />
                     </ul>
                 </div>
             </div>
