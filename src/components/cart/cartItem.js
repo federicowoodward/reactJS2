@@ -8,7 +8,7 @@ export default function CartItem({item, quantity}) {
     }
     return (
         <li><img className="cartItemImg" src={item.imgUrl} alt={item.alt}/>- Cantidad: {quantity} - 
-        <button className="buttonDeleteItem" onClick={removePhoto()}>Eliminar item</button>
+        <button className="buttonDeleteItem" onClick={removePhoto}>Eliminar item</button>
         </li>
     );
 }
