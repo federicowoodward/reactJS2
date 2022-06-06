@@ -5,13 +5,11 @@ import ItemCount from "../itemCount/itemCount.js";
 import "./itemDetail.css";
 
 export default function ItemDetail({photo}) {
-
     const [inputType, setInputType] = useState("itemCount");
-
     const {addToCart} = UseCartContext();
 
     function onAdd(quantity) {
-        addToCart({photo, quantity})
+        addToCart({photo, quantity});
         setInputType("buyButtons");
     }
 

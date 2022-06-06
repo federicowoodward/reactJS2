@@ -10,26 +10,27 @@ export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([]);
     const [photosAdded, addPhoto] = useState(0);
 
-    function isItCart(id){
-        return photosList.some(photo => photo.id === id)
+    function isInCart(id){
+        return photosList.some(photo => photo.photo.id === id)
     }
     function addToCart(item) {
-        if (isItCart(item.id)) {
-            let i = photosList.findIndex(photo => photo.id === item.id)
+        let quantity = item.quantity
+        let photo = item.photo
+        if (isInCart(photo.id)) {
+            let i = photosList.findIndex(i => i.photo.id === photo.id)
             const newList = photosList;
-            newList[i].quantity += item.quantity;
+            newList[i].quantity += quantity;
             udapteCart(newList);
         } else {
-            udapteCart([...photosList,item]);
+            udapteCart([...photosList,{photo, quantity}]);
         }
     }
-
     function clearCart() {
         udapteCart([]);
     }
 
     function clearPhoto(id) {
-        let i = photosList.findeIndex(photo => photo.id === id);
+        let i = photosList.findIndex(photo => photo.id === id);
         const newPhotoList = photosList;
         newPhotoList.splice(i,1);
         udapteCart(newPhotoList);
@@ -37,11 +38,13 @@ export default function CartContextProv({children}){
 
     function udapteCart(array) {
         setPhotoList(array);
-        addPhoto( array
-            .map(num => num.quantity*num.price)
-            .reduce((acc,num) => acc + num,0) 
-        );
+        let result = array.map(item => item.quantity*item.photo.price);
+        result.reduce((a,b) => a + b, 0);
+        addPhoto(result);
     }
+    
+
+
     return (
         <cartContext.Provider value={{
             photosList,
