@@ -11,7 +11,6 @@ export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([]);
     const [photosPrice, addPricePhoto] = useState(0);
     const [photosQuantityAdedd, setQA] = useState(0)
-    const [orders, setOrders] = useState({})
 
     function isInCart(id){
         return photosList.some(photo => photo.photo.id === id)
@@ -52,11 +51,13 @@ export default function CartContextProv({children}){
     }
     
      
-    function generateOrder() {
+    function generateOrder(customer) {
         let order = {}
+        
         let date = new Date();
+        let orderid = Math.random();
 
-        order.buyer = { name: "fede", email: "f@gmail.com" , phone: "2931923"};
+        order.buyer = customer;
         order.photos = photosList.map(photos => {
             const id = photos.photo.id;
             const alt = photos.photo.alt;
@@ -66,24 +67,31 @@ export default function CartContextProv({children}){
         });
         order.date = { date: date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() }
         order.total = photosPrice;
+        order.randomid = orderid;
 
         const db = getFirestore();
         const queryCollection = collection(db, 'orders');
         addDoc(queryCollection, order)
         .catch(err => console.log(err))
-        .finally(() => clearCart())
-        getDocs(queryCollection)
-        .then ( resp =>
-            setOrders(resp.docs.map(item => ({id: item.id, ...item.data()}))))
+        .finally(() => clearCart(), 
+        )
         
-            // for(let i = 0; i < orders.length; i++) {
-            //     if (orders[i].buyer.email === order.buyer.email &&  orders[i].date.date === order.date.date && orders[i].total === order.total) {
-            //         alert("este es tu id de compra:" + orders[i+1].id)
-            //     } else {
-            //        console.log("este no es")
-            //     }
-            // }
+        
+        orderId(orderid)
     }    
+        
+    
+    function orderId(a) {
+            const db = getFirestore();
+            const queryCollection = collection(db, 'orders');
+            getDocs(queryCollection)
+            .then ( resp =>
+                resp.docs.map(item => ({id: item.id, ...item.data()}))
+                .map(item => item.randomid === a && alert(item.id)))
+            }
+
+
+        
     
 
     return (
@@ -94,7 +102,7 @@ export default function CartContextProv({children}){
             clearPhoto,
             photosPrice,
             photosQuantityAdedd,
-            generateOrder
+            generateOrder,
         }}>
             {children}
         </cartContext.Provider> 

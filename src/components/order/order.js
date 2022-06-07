@@ -5,51 +5,54 @@ import "./order.css";
 
 export default function Order() {
 
-    // const {photosList, clearCart, photosPrice, generateOrder} = UseCartContext();
-    const [customer, setCustomer] = useState({})
-    const [err, setErr] = useState(false)
-
+    const {generateOrder} = UseCartContext();
+    const [customer, setCustomer] = useState({});
+    const [err, setErr] = useState(false);
+    const [errmessage, setErrMsg] = useState("a");
+    const [envoy, setEnvoy] = useState(false);
+    
     function generateCustomer(e) {
         setCustomer({
             ...customer,
             [e.target.name]: e.target.value
         });
     }
-
-    const validName = (name) => /^[a-zA-Z]+$/.test(name);
     function dataManage() {
-        if (customer.email === customer.email2) {
-            delete customer.email2;
-        } else {
-            catchErr("email")
-        } 
-        if (validName(customer.name === true)) {
-            setErr(false)
-        } else {
-            catchErr("name")}
+        const validName = (name) => /^[a-zA-Z ]+$/.test(name);
         
-        if (!customer.number.includes("+")) {
+        if (customer.email !== customer.email2){
+            catchErr("email");
+        } 
+        if (!validName(customer.name) === true) {  
+            catchErr("name")
+        }
+        
+        if (customer.number < 10 ) {
             catchErr("number")
         }
+        sendData()
     }
-    let errmessage = "";
     function catchErr(err) {
         switch (err) {
             case "email":
-                errmessage = "El correo es distinto.";
+                setErrMsg("El correo es distinto.")
                 break;
-            case "name":
-                errmessage = "El nombre no puede contener numeros, solo nombre y apellido";
-                break;
-            case "number": 
-                errmessage = "El formato de numero es +(codigo de pais)"
-                break;
-            default:
-                setErr(false);
-        }
-        setErr(true)
-    };
-
+                case "name":
+                    setErrMsg("El nombre no puede contener numeros, solo nombre y apellido")
+                    break;
+                    
+                    default:
+                        setErr(false);
+                    }
+                    setErr(true)
+                };
+                
+                function sendData() {
+                    delete customer.email2;
+                    generateOrder(customer);
+                    setEnvoy(true);
+                }
+                
     return (
 
         <div className="orderBody">
@@ -62,7 +65,8 @@ export default function Order() {
                 <textarea name="comment" onChange={(e) => generateCustomer(e)} id="" cols="20" rows="2"></textarea>
             </form>
             {err ? <p>Error: {errmessage}</p> : <p></p>}
-            <button onClick={dataManage}>Enviar pedido</button>
+            {envoy ? <p>Pedido enviado!</p>:<button onClick={dataManage}>Enviar pedido</button> }
+            {/* <button onClick={orderId}>aaaa </button> */}
         </div>
 )
 }
