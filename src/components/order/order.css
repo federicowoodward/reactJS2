@@ -1,0 +1,16 @@
+.orderBody {
+    background-color: rgb(117, 117, 117);
+    height: 80vh;
+}
+.orderBody h4 {
+    text-align: center;
+    padding: 9px;
+}
+.inputGroup {
+    margin: auto;
+    padding: 10px;
+}
+.inputGroup input {
+    display: block;
+    margin: auto;
+}
