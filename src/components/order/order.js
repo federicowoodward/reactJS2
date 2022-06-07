@@ -5,54 +5,64 @@ import "./order.css";
 
 export default function Order() {
 
-    const {photosList, clearCart, photosPrice, generateOrder} = UseCartContext();
+    // const {photosList, clearCart, photosPrice, generateOrder} = UseCartContext();
+    const [customer, setCustomer] = useState({})
+    const [err, setErr] = useState(false)
 
-    const [customerData, setCustomerData] = useState({});
-    const [customerDataOk, setCustomerDataOk] = useState(false);
-    const [customerMailOk, setCustomerMailOk] = useState(false);
-    const [dataError, setDataError] = useState(false);
-    const [orderSent, setOrderSent] = useState(false)
-
-
-    function changeHandler(e) {
-        setCustomerData({
-            ...customerData,
+    function generateCustomer(e) {
+        setCustomer({
+            ...customer,
             [e.target.name]: e.target.value
         });
     }
 
+    const validName = (name) => /^[a-zA-Z]+$/.test(name);
     function dataManage() {
-        customerDataVerify() ? sendOrderManage(customerData) : setDataError(true) ;
-    }
-
-
-    function sendOrderManage(customerData) {
-        setOrderSent(true);
-        generateOrder(customerData);
-    }
-    function customerDataVerify() {
-        if (customerData.name && customerData.phone && customerData.email && customerData.email2) {
-            setCustomerDataOk(true);
-            if (customerData.email === customerData.email2) {
-                setCustomerMailOk(true);
-            }
+        if (customer.email === customer.email2) {
+            delete customer.email2;
+        } else {
+            catchErr("email")
+        } 
+        if (validName(customer.name === true)) {
+            setErr(false)
+        } else {
+            catchErr("name")}
+        
+        if (!customer.number.includes("+")) {
+            catchErr("number")
         }
-        return (customerDataOk && customerMailOk)
     }
+    let errmessage = "";
+    function catchErr(err) {
+        switch (err) {
+            case "email":
+                errmessage = "El correo es distinto.";
+                break;
+            case "name":
+                errmessage = "El nombre no puede contener numeros, solo nombre y apellido";
+                break;
+            case "number": 
+                errmessage = "El formato de numero es +(codigo de pais)"
+                break;
+            default:
+                setErr(false);
+        }
+        setErr(true)
+    };
 
     return (
 
         <div className="orderBody">
             <p>Ingrese sus datos para enviar el pedido:</p>
             <form className="inputGroup" action="">
-                <input name="name" onChange={(e) => changeHandler(e)} type="text" placeholder="Nombre" />
-                <input name="phone" onChange={(e) => changeHandler(e)} type="tel" placeholder="Teléfono" />
-                <input name="email" onChange={(e) => changeHandler(e)} type="email" placeholder="Correo eléctronico" />
-                <input name="email2" onChange={(e) => changeHandler(e)} type="email" placeholder="Repita correo electrónico" />
-                <textarea name="comment" onChange={(e) => changeHandler(e)} id="" cols="20" rows="2"></textarea>
+                <input name="name" onChange={(e) => generateCustomer(e)} type="text" placeholder="Nombre" />
+                <input name="phone" onChange={(e) => generateCustomer(e)} type="tel" placeholder="Teléfono" />
+                <input name="email" onChange={(e) => generateCustomer(e)} type="email" placeholder="Correo eléctronico" />
+                <input name="email2" onChange={(e) => generateCustomer(e)} type="email" placeholder="Repita correo electrónico" />
+                <textarea name="comment" onChange={(e) => generateCustomer(e)} id="" cols="20" rows="2"></textarea>
             </form>
-            {dataError ? <p>Alguno de los datos ingresados es incorrecto</p> : <p></p>}
-            <button onClick={generateOrder}>Enviar pedido</button>
+            {err ? <p>Error: {errmessage}</p> : <p></p>}
+            <button onClick={dataManage}>Enviar pedido</button>
         </div>
 )
 }

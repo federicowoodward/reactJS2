@@ -76,13 +76,13 @@ export default function CartContextProv({children}){
         .then ( resp =>
             setOrders(resp.docs.map(item => ({id: item.id, ...item.data()}))))
         
-            for(let i = 0; i < orders.length; i++) {
-                if (orders[i].buyer.email === order.buyer.email &&  orders[i].date.date === order.date.date && orders[i].total === order.total) {
-                    alert("este es tu id de compra:" + orders[i+1].id)
-                } else {
-                   console.log("este no es")
-                }
-            }
+            // for(let i = 0; i < orders.length; i++) {
+            //     if (orders[i].buyer.email === order.buyer.email &&  orders[i].date.date === order.date.date && orders[i].total === order.total) {
+            //         alert("este es tu id de compra:" + orders[i+1].id)
+            //     } else {
+            //        console.log("este no es")
+            //     }
+            // }
     }    
     
 
