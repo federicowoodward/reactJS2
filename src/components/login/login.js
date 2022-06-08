@@ -1,6 +1,6 @@
 import { doc, getDoc, getFirestore} from "firebase/firestore";
 import { useState }  from 'react';
-import FileUpload from "../../context/fileUpload/fileUpload";
+import Upload from "../../context/fileUpload/fileUpload.js";
 
 export default function Login() {
     const [login, generateLogin] = useState({})
@@ -32,18 +32,18 @@ export default function Login() {
         return (
             <div  className="orderBody">
                 <h4>Login logrado</h4>
-                <FileUpload/>
+                < Upload/>
             </div>
         );
-    } else if(loginStatus === false) {
+    } else if (loginStatus === false) {
           return (
 
             <div className="orderBody">
                 <form className="inputGroup" action="">
                     <input name="user" onChange={(e) => generateCustomer(e)} type="text" placeholder="Usuario" />
-                    <input name="password" onChange={(e) => generateCustomer(e)} type="password" placeholder="Contraseña" />
+                    <input name="password" autoComplete="on" onChange={(e) => generateCustomer(e)} type="password" placeholder="Contraseña" />
                 </form>
-                <button onClick={compareLogin}>Iniciar sesion</button>
+                <button onClick={compareLogin}>Enviar pedido</button>
             </div>
     )
     }

@@ -1,48 +1,45 @@
-import React, { Component } from 'react';
-import firebase from "firebase";
+import { getDownloadURL, getStorage, ref, uploadBytesResumable} from "firebase/storage";
+import React, { useState } from 'react';
+import ItemUpload from "./itemUpload";
+import "./upload.css";
 
-class FileUpload extends Component{
-    constructor() {
-        super();
-        this.state = {
-            uploadValue: 0,
-            picture: null
-        };
+export default function Upload(){
+    const [uploadState, setUpState] = useState(false);
+    const [uploadImg, setImg] = useState();
 
-        this.handleUpload = this.handleUpload.bind(this);
-    }
-
-    handleUpload(event) {
+    function handleUpload(event) {
         const file = event.target.files[0];
-        const storageRef = firebase.storage.ref(`/fotos/${file.name}`);
-        const task = storageRef.put(file);
+        const storage = getStorage();
+        const storageRef = ref(storage, `/fotos/${file.name}`);
+        const task = uploadBytesResumable(storageRef, file);
 
         task.on('state_changed', snapshot => {
             let percentage = ( snapshot.bytesTransferred / snapshot.totalBytes) + 100;
-            this.setState({
-                uploadValue: percentage
-            })
+            if (percentage === 101) {
+                setUpState(true);
+            }
         }, err => { 
             console.log(err.message) 
         }, () => { 
-            this.setState({
-                uploadValue: 100,
-                picture: task.snapshot.downloadURL
-            });
+           getDownloadURL(task.snapshot.ref).then((downloadURL) => {
+               setImg(downloadURL);
+           })
         });
     }
 
-    render() {
+    if (uploadState === true) {
         return (
             <div>
-                <progress value={this.state.uploadValue} max="100"></progress>
+                <ItemUpload img={uploadImg}/> 
+            </div>
+        );
+    } else if (uploadState === false) {
+
+        return (
+            <div>
                 <br/>
-                <input type="file" onChange={this.props.handleUpload}/>
-                <br/>
-                <img width="320" src={this.state.picture} alt=""/>
+                <input type="file" onChange={(e) => handleUpload(e)}/> 
             </div>
         )
     }
 }
-
-export default FileUpload;
