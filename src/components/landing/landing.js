@@ -1,5 +1,4 @@
 import "./landing.css";
-
 export default function landing() {
     return (
     <main className="mainLanging">

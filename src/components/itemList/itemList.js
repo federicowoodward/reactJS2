@@ -4,7 +4,6 @@ import "./itemList.css";
 
 
 export default function ItemList({ picsList, id}){
-
     return (
         <div className="itemList">
                 {

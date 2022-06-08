@@ -1,9 +1,8 @@
-/* paleta: FF461. FFCB3A. S11D47. 343B3C. 1E2425.   https://www.nosotros-los-diseñadores.com/wp-content/uploads/2019/11/minimal-colors-by-dumma-branding-7.jpg*/
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 .navBar {
-    background-color: rgb(28, 1, 136);
-    height: 60px;
+    background-color: black;
+    height: 50px;
     width: 100%;   
     clear: both;
     content: "";
@@ -40,6 +39,6 @@
 .logoNav {
     width: 1px;
     height: 1px;
-    margin: 5px 0 0 30px;
+    margin: 1px 0 0 30px;
 }
 
