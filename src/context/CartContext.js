@@ -90,10 +90,6 @@ export default function CartContextProv({children}){
                 .map(item => item.randomid === a && alert(item.id)))
             }
 
-
-        
-    
-
     return (
         <cartContext.Provider value={{
             photosList,

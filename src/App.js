@@ -9,6 +9,7 @@ import NavBar from './components/navBar/navBar';
 import Footer from './components/footer/footer.js';
 import Cart from "./components/cart/cart.js";
 import Order from "./components/order/order.js";
+import Login from "./components/login/login.js";
 import './App.css';
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
                 <Route path="/contact" element = { < Contact />} />
                 <Route path="/landing" element = { < Landing />} />
                 <Route path="/order" element = { < Order />} />
+                <Route path="/login" element = { < Login /> } />
                 <Route path="/*" element = { <Navigate to="/" replace /> } />
                 </Routes>
                 <Footer/> 

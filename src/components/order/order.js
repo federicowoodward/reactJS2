@@ -5,7 +5,7 @@ import "./order.css";
 
 export default function Order() {
 
-    const {generateOrder} = UseCartContext();
+    const {generateOrder, photosList} = UseCartContext();
     const [customer, setCustomer] = useState({});
     const [err, setErr] = useState(false);
     const [errmessage, setErrMsg] = useState("a");
@@ -37,36 +37,45 @@ export default function Order() {
             case "email":
                 setErrMsg("El correo es distinto.")
                 break;
-                case "name":
-                    setErrMsg("El nombre no puede contener numeros, solo nombre y apellido")
-                    break;
-                    
-                    default:
-                        setErr(false);
-                    }
-                    setErr(true)
-                };
+            case "name":
+                setErrMsg("El nombre no puede contener numeros, solo nombre y apellido")
+                break;
+            default:
+            setErr(false);
+        }
+        setErr(true)
+    };
                 
-                function sendData() {
-                    delete customer.email2;
-                    generateOrder(customer);
-                    setEnvoy(true);
-                }
-                
-    return (
+    function sendData() {
+        delete customer.email2;
+        generateOrder(customer);
+        setEnvoy(true);
+    }
+        
+    if (photosList.length === 0) {
+        return (
+            <div><h4>Agrega productos antes de hacer un pedido!</h4></div>
+        );
+    }
+    else {
+            
+        return (
 
-        <div className="orderBody">
-            <p>Ingrese sus datos para enviar el pedido:</p>
-            <form className="inputGroup" action="">
-                <input name="name" onChange={(e) => generateCustomer(e)} type="text" placeholder="Nombre" />
-                <input name="phone" onChange={(e) => generateCustomer(e)} type="tel" placeholder="Teléfono" />
-                <input name="email" onChange={(e) => generateCustomer(e)} type="email" placeholder="Correo eléctronico" />
-                <input name="email2" onChange={(e) => generateCustomer(e)} type="email" placeholder="Repita correo electrónico" />
-                <textarea name="comment" onChange={(e) => generateCustomer(e)} id="" cols="20" rows="2"></textarea>
-            </form>
-            {err ? <p>Error: {errmessage}</p> : <p></p>}
-            {envoy ? <p>Pedido enviado!</p>:<button onClick={dataManage}>Enviar pedido</button> }
-            {/* <button onClick={orderId}>aaaa </button> */}
-        </div>
-)
+            <div className="orderBody">
+                <p>Ingrese sus datos para enviar el pedido:</p>
+                <form className="inputGroup" action="">
+                    <input name="name" onChange={(e) => generateCustomer(e)} type="text" placeholder="Nombre" />
+                    <input name="phone" onChange={(e) => generateCustomer(e)} type="tel" placeholder="Teléfono" />
+                    <input name="email" onChange={(e) => generateCustomer(e)} type="email" placeholder="Correo eléctronico" />
+                    <input name="email2" onChange={(e) => generateCustomer(e)} type="email" placeholder="Repita correo electrónico" />
+                    <textarea name="comment" onChange={(e) => generateCustomer(e)} id="" cols="20" rows="2"></textarea>
+                </form>
+                {err ? <p>Error: {errmessage}</p> : <p></p>}
+                {envoy ? <p>Pedido enviado!</p>:<button onClick={dataManage}>Enviar pedido</button> }
+            </div>
+        )
+    }
 }
+
+
+

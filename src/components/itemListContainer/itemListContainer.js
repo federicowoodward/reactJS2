@@ -1,11 +1,11 @@
 import { collection, getDocs, getFirestore, query, where} from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from '../itemList/itemList.js';
 import Loader from '../loader/loader.js';
 import "./itemListContainer.css";
 
-export default function ItemListContainer (){
+function ItemListContainer (){
     const [picsList, setPicsList] = useState([]);
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
@@ -29,3 +29,4 @@ export default function ItemListContainer (){
         </div>
     );
 };
+export default memo(ItemListContainer);

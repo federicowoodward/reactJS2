@@ -1,11 +1,11 @@
 import { doc, getDoc, getFirestore} from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../itemDetail/itemDetail.js";
 import Loader from "../loader/loader.js";
 import './itemDetailContainer.css';
 
-export default function ItemDetailContainer() {
+function ItemDetailContainer() {
     const [photo,setPhoto] = useState({});
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
@@ -26,3 +26,4 @@ export default function ItemDetailContainer() {
         </div>
     );
 };
+export default memo(ItemDetailContainer);
