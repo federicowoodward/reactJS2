@@ -1,12 +1,10 @@
-import { addDoc, collection, getFirestore} from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { getStorage, ref, deleteObject } from "firebase/storage";
 import { useState } from 'react';
-import Upload from "./fileUpload";
 
-
-export default function ItemUpload({img}) {
+export default function ItemUpload({img, redirect}) {
     const [item, setItem] = useState({})
     const [upload, setUploadDone] = useState(false)
-    const [newUpload, setNewUploadDone] = useState(false);
     let photo = {};
 
     function generateItem(e) {
@@ -18,10 +16,10 @@ export default function ItemUpload({img}) {
 
 
     function uploadItem() {
-
-        photo.alt = item.alt;
-        photo.category = item.category;
-        photo.client = item.client;
+  
+        photo.alt = item.alt.toLowerCase();
+        photo.category = item.category.toLowerCase();
+        photo.client = item.client.toLowerCase();
         photo.img = img;
 
         const db = getFirestore();
@@ -35,15 +33,23 @@ export default function ItemUpload({img}) {
         )
     };
 
-    function uploadAgain() {
-        setNewUploadDone(true);
-    }
+    function deletePhoto() {
+        const storage = getStorage();
+        const desertRef = ref(storage, `${img}`);
+        deleteObject(desertRef)
+            .then(() => {
+                // Swal.fire(
+                //     'Imagen borrada!',
+                //     'success'
+                //   )
+            } )
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {redirect()});
+            }
 
-    function deleteItem() {
-        setNewUploadDone(true);
-        img = null;
-        photo = null;
-    }
+
                  
     if (upload === false) {
 
@@ -56,17 +62,15 @@ export default function ItemUpload({img}) {
                 <input name="client" placeholder="Cliente" type="text" onChange={(e) => generateItem(e)}/>
             </form>
             <button onClick={uploadItem}>Subir</button>
-            <button onClick={deleteItem}>Borrar foto</button>
+           
+            <button  onClick={deletePhoto}>Borrar foto</button>
         </div>
     );
-} else if (upload === true) {
+} else if (upload === true)  {
     <div>
         <h4>Subida lograda! </h4>
         <p> Podes chequearlo en "Fotos" (sin categorias seleccionadas)</p>
         <p>Para subir otra foto:</p>
-        <button onClick={uploadAgain}>Subir otra foto</button>
+        {/* <button onClick={uploadAgain}>Subir otra foto</button> */}
     </div>
-} else if ( newUpload === true) {
-    < Upload />
-} 
-}
+}}

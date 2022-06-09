@@ -9,11 +9,10 @@ function ItemListContainer (){
     const [picsList, setPicsList] = useState([]);
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
-
     useEffect(() => {
         const db = getFirestore()
-        const queryCollection = collection(db,"autos");
-        const queryCollectionFilter = id === "photos" ?  query(collection(db, "autos"), where("category", "==", `${id}`)) : queryCollection;
+        const queryCollection = collection(db,"fotos");
+        const queryCollectionFilter = id === "photos" ?  query(collection(db, "fotos"), where("category", "==", `${id}`)) : queryCollection;
         getDocs(queryCollectionFilter)
         .then ( resp => {
             if (resp.size === 0) {

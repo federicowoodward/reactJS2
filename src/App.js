@@ -11,6 +11,7 @@ import Order from "./components/order/order.js";
 import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart.js";
 import './App.css';
+import Upload from "./context/fileUpload/fileUpload";
 
 export default function App() {
 
@@ -31,6 +32,7 @@ export default function App() {
                 <Route path="/landing" element = { < Landing />} />
                 <Route path="/order" element = { < Order />} />
                 <Route path="/login" element = { < Login /> } />
+                <Route path="/upload" element = { <Upload />} />
                 <Route path="/*" element = { <Navigate to="/" replace /> } />
                 </Routes>
                 <Footer/> 

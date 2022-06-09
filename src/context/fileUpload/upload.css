@@ -7,3 +7,31 @@
     padding: 10px;
     margin:35px;
 }
+.selectContainer {
+    background: #fff;
+    margin: 20px;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.progressBar {
+    margin: auto;
+    width: 200px;
+    text-align:center;
+    border: 2px solid black;
+}
+.white {
+    background: rgb(255, 255, 255);
+}
+.green1 {
+    background: rgb(143, 235, 140);
+}
+.green2 {
+    background: rgb(81, 199, 77);
+}
+.green3 {
+    background: rgb(32, 180, 27);
+}
+.green4 {
+    background: rgb(10, 161, 5);
+}
