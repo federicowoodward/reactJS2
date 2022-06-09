@@ -6,6 +6,7 @@ import "./upload.css";
 export default function Upload(){
     const [uploadState, setUpState] = useState(false);
     const [uploadImg, setImg] = useState();
+    const [newUpload, setNewUploadDone] = useState(false);
 
     function handleUpload(event) {
         const file = event.target.files[0];
@@ -27,10 +28,13 @@ export default function Upload(){
         });
     }
 
+    
+ 
+
     if (uploadState === true) {
         return (
             <div>
-                <ItemUpload img={uploadImg}/> 
+                <ItemUpload img={uploadImg} /> 
             </div>
         );
     } else if (uploadState === false) {
