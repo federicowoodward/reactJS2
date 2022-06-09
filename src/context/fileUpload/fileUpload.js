@@ -15,9 +15,11 @@ export default function Upload(){
         }
         if (num === 40) { Color("green2")
         }
-        if (num === 80) { Color("green3")
+        if (num === 60) { Color("green3")
+    }
+        if (num === 80) { Color("green4")
         }
-        if (num === 99) { Color("green4")
+        if (num === 99) { Color("green5")
         }
     }
 
@@ -35,13 +37,13 @@ export default function Upload(){
         const task = uploadBytesResumable(storageRef, file);
         
         task.on('state_changed', snapshot => {
-            let percentage = ( snapshot.bytesTransferred / snapshot.totalBytes);
-            if (percentage > 0.2) { setProgress(20); setColor(20);
-            } if (percentage > 0.4) { setProgress(40); setColor(40);
-            } if (percentage > 0.6) { setProgress(60); setColor(60);
-            } if (percentage > 0.8) { setProgress(80); setColor(80);
-            } if (percentage > 0.999) { setProgress(99); setColor(99);
-            } if (percentage === 1) { setUpState(true); 
+            let percentage = ( snapshot.bytesTransferred / snapshot.totalBytes * 100);
+            if (percentage > 20) { setProgress(20); setColor(20);
+            } if (percentage > 40) { setProgress(40); setColor(40);
+            } if (percentage > 60) { setProgress(60); setColor(60);
+            } if (percentage > 80) { setProgress(80); setColor(80);
+            } if (percentage > 99) { setProgress(99); setColor(99);
+            } if (percentage === 100) { setUpState(true); 
             }
         }, err => { 
             console.log(err.message) 

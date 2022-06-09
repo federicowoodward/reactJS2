@@ -1,0 +1,15 @@
+.imgUpload {
+    height: 60vh;
+    display: block;
+}
+.containerUpload {
+    margin: 20px 220px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.containerUpload button {
+    padding: 2px;
+    border: 2px solid black;
+    background-color: rgb(73, 79, 246);
+}

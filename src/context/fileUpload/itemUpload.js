@@ -1,6 +1,10 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { getStorage, ref, deleteObject } from "firebase/storage";
 import { useState } from 'react';
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content';
+import { Link } from "react-router-dom";
+import "./itemUpload.css";
 
 export default function ItemUpload({img, redirect}) {
     const [item, setItem] = useState({})
@@ -34,14 +38,17 @@ export default function ItemUpload({img, redirect}) {
     };
 
     function deletePhoto() {
+        const MySwal = withReactContent(Swal)
+
         const storage = getStorage();
         const desertRef = ref(storage, `${img}`);
         deleteObject(desertRef)
             .then(() => {
-                // Swal.fire(
-                //     'Imagen borrada!',
-                //     'success'
-                //   )
+                    MySwal.fire({
+                        title: <p>Imagen borrada!</p>,
+                        icon: "success",
+                       
+                    })
             } )
             .catch((error) => {
                 console.log(error);
@@ -50,27 +57,31 @@ export default function ItemUpload({img, redirect}) {
             }
 
 
-                 
-    if (upload === false) {
+      if (upload === true)  {
+          return( 
+            <div>
+                <Link to="/upload">
+                    <p> Subir otra foto</p>
+                </Link>
+                <Link to="/">
+                    <p> Volver al inicio</p>
+                </Link>
+              </div>
+                );
+
+    } else if (upload === false) {
 
         return(
-            <div>
+            <div >
             <img src={img} alt="" className="imgUpload"/>
-            <form>
+            <form className="containerUpload">
                 <input name="alt" placeholder="Alt" type="text" onChange={(e) => generateItem(e)}/>
                 <input name="category" placeholder="Categoria" type="text" onChange={(e) => generateItem(e)}/>
                 <input name="client" placeholder="Cliente" type="text" onChange={(e) => generateItem(e)}/>
+                <button className="upload" onClick={uploadItem}>Subir</button>
+                <button className="delete" onClick={deletePhoto}>Borrar foto</button>
             </form>
-            <button onClick={uploadItem}>Subir</button>
-           
-            <button  onClick={deletePhoto}>Borrar foto</button>
+         
         </div>
     );
-} else if (upload === true)  {
-    <div>
-        <h4>Subida lograda! </h4>
-        <p> Podes chequearlo en "Fotos" (sin categorias seleccionadas)</p>
-        <p>Para subir otra foto:</p>
-        {/* <button onClick={uploadAgain}>Subir otra foto</button> */}
-    </div>
 }}

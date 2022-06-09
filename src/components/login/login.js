@@ -1,6 +1,8 @@
 import { doc, getDoc, getFirestore} from "firebase/firestore";
 import { useState }  from 'react';
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content';
 
 export default function Login() {
     const [login, generateLogin] = useState({})
@@ -21,10 +23,14 @@ export default function Login() {
     }
 
     function compareLogin() {
+        const MySwal = withReactContent(Swal)
         if (user.user === login.user && user.password === login.password) {
             setStatus(true);
         } else { 
-           alert("Login failed");
+            MySwal.fire({
+                title: <p>Login error!</p>,
+                icon: "error"
+            })
         }
     }
 
