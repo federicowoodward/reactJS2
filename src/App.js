@@ -10,7 +10,7 @@ import Order from "./components/order/order.js";
 import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart.js";
 import './App.css';
-import Upload from "./components/order/fileUpload/fileUpload";
+import Upload from "./components/fileUpload/fileUpload.js";
 
 export default function App() {
 
