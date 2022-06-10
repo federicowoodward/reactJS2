@@ -4,14 +4,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Introduction from "./components/introduce/introduce.js";
 import CartContextProv from "./context/CartContext.js";
 import Contact from "./components/contact/contact.js";
-// import Landing from './components/landing/landing.js';
 import Footer from './components/footer/footer.js';
 import NavBar from './components/navBar/navBar';
 import Order from "./components/order/order.js";
 import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart.js";
 import './App.css';
-import Upload from "./context/fileUpload/fileUpload";
+import Upload from "./components/order/fileUpload/fileUpload";
 
 export default function App() {
 
@@ -23,7 +22,6 @@ export default function App() {
                 <NavBar/>
                 <Routes>
                 <Route path="/category/photos" element={<ItemListContainer/>} />
-                {/* <Route path="/landing" element = { < Landing />} /> */}
                 <Route path="/category/:id" element={<ItemListContainer/>} />
                 <Route path="/:id" element = { < ItemListContainer />} />
                 <Route path="/category/itemdetail/:id" element={<ItemDetailContainer/>} />

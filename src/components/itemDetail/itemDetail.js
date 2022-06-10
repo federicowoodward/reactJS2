@@ -9,13 +9,13 @@ export default function ItemDetail({photo}) {
     const {addToCart} = UseCartContext();
 
     function onAdd(quantity) {
-        addToCart({photo, quantity});
+        addToCart(photo, quantity);
         setInputType("buyButtons");
     }
 
     return (
         <div className="itemDetail">
-            <img className="itemDetailImg" src={photo.imgUrl} alt="" />
+            <img className="itemDetailImg" src={photo.img} alt="" />
             <div className='itemDetailInfo'>
                 <p className='itemDetailCliente'>{photo.client}</p>
                 <h3 className="itemDetailTitle">{photo.alt}</h3>

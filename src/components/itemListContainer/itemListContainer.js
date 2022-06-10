@@ -3,7 +3,6 @@ import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from '../itemList/itemList.js';
 import Loader from '../loader/loader.js';
-import { Link } from "react-router-dom";
 import "./itemListContainer.css";
 
 function ItemListContainer (){
@@ -25,9 +24,6 @@ function ItemListContainer (){
     },[id])
     return (
         <div>
-            <Link to="/loading">
-            <button>Login</button>
-            </Link>
         {loading ? <Loader/> : <ItemList picsList={picsList} id={id} />}
         </div>
     );

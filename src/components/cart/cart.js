@@ -4,7 +4,7 @@ import CartItem from "./cartItem.js";
 import "./cart.css";
 
 export default function Cart() {
-    const {photosList, clearCart, photosPrice} = UseCartContext();
+    const {photosList, clearCart} = UseCartContext();
   
 
  
@@ -13,7 +13,6 @@ export default function Cart() {
             <div className="cart">
                 <h2> Haz agregado las siguientes fotos:</h2>
                 {photosList.map(item => <CartItem key={item.photo.id} item={item.photo} quantity={item.quantity}/>)}
-                <span className="cartPrice">{photosPrice}</span>
                 <button onClick={clearCart}>Vaciar orden</button>
                 <Link to="/order">
                     <button>Enviar orden</button>

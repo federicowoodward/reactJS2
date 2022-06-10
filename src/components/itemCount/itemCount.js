@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "./itemCount.css";
 
-export default function ItemCount({initial , stock, onAdd}) {
+export default function ItemCount({initial ,  onAdd}) {
     const [count, setCount] = useState(initial);
 
-    const add = () => {if(count < stock) setCount(count+1)}
+    const add = () => {if(count < 3) setCount(count+1)}
     const less = () => setCount(count-1)
     if (count === 0) { setCount(count+1) }
     function addItem() {
