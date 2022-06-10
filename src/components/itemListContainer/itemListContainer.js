@@ -3,6 +3,7 @@ import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from '../itemList/itemList.js';
 import Loader from '../loader/loader.js';
+import { Link } from "react-router-dom";
 import "./itemListContainer.css";
 
 function ItemListContainer (){
@@ -12,7 +13,7 @@ function ItemListContainer (){
     useEffect(() => {
         const db = getFirestore()
         const queryCollection = collection(db,"fotos");
-        const queryCollectionFilter = id === "photos" ?  query(collection(db, "fotos"), where("category", "==", `${id}`)) : queryCollection;
+        const queryCollectionFilter = id === "photos" ? queryCollection :  query(collection(db, "fotos"), where("category", "==", `${id}`));
         getDocs(queryCollectionFilter)
         .then ( resp => {
             if (resp.size === 0) {
@@ -20,10 +21,13 @@ function ItemListContainer (){
             } else {
                 setPicsList( resp.docs.map(item => ({id: item.id, ...item.data()})))}})
                 .catch(err => console.log(err))
-        .finally(setTimeout(() => setLoading(false), 2000));
+        .finally(setTimeout(() => setLoading(false), 4000));
     },[id])
     return (
         <div>
+            <Link to="/loading">
+            <button>Login</button>
+            </Link>
         {loading ? <Loader/> : <ItemList picsList={picsList} id={id} />}
         </div>
     );

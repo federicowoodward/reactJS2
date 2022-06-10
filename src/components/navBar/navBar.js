@@ -18,7 +18,7 @@ export default function NavBar() {
                         <li><Link to="/category/fiesta">fiesta</Link></li>
                         <li><Link to="/category/otros">otros</Link></li>
                         <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="/">Fotos</Link></li>
+                        <li><Link to="/category/all">Fotos</Link></li>
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
                         <li><Link to="/cart"><CartPhoto/></Link></li>
