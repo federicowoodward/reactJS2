@@ -14,11 +14,15 @@ export default function NavBar() {
                 </div>
                 <div>
                     <ul className="navBarUl">
-                        <li><Link to="/category/autos">autos</Link></li>
-                        <li><Link to="/category/fiesta">fiesta</Link></li>
-                        <li><Link to="/category/otros">otros</Link></li>
+                       
                         <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="/category/all">Fotos</Link></li>
+                        <li><Link to="/category/all">Fotos</Link>
+                            <ul>
+                                <li><Link to="/category/autos">Autos</Link></li>
+                                <li><Link to="/category/fiesta">Fiesta</Link></li>
+                                <li><Link to="/category/otros">Otros</Link></li>
+                            </ul>
+                        </li>
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
                         <li><Link to="/cart"><CartPhoto/></Link></li>

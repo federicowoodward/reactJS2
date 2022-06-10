@@ -13,7 +13,7 @@ function ItemDetailContainer() {
   
     useEffect(() =>{
         const db = getFirestore()
-        const dbQuery = doc(db, `${idSplit[0]}`, `${idSplit[1]}`)
+        const dbQuery = doc(db, `fotos`, `${idSplit[1]}`)
         getDoc(dbQuery) 
         .then(resp => setPhoto( {id: resp.id, ...resp.data()}))
         .catch(err => console.error(err))

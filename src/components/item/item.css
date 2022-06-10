@@ -1,9 +1,7 @@
 .itemImg {
-    width:  80vh;
-    margin: 20px;
-    padding: 0 40px;
+    width:  100vh;
+    height: 100%;
 }
 .flexItem {
-    display: flex;
-    
+    padding: 0 12px;
 }

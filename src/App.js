@@ -2,6 +2,7 @@ import ItemDetailContainer from "./components/itemDetailContainer/itemDetailCont
 import ItemListContainer from './components/itemListContainer/itemListContainer.js'; 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Introduction from "./components/introduce/introduce.js";
+import Upload from "./components/fileUpload/fileUpload.js";
 import CartContextProv from "./context/CartContext.js";
 import Contact from "./components/contact/contact.js";
 import Footer from './components/footer/footer.js';
@@ -10,7 +11,6 @@ import Order from "./components/order/order.js";
 import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart.js";
 import './App.css';
-import Upload from "./components/fileUpload/fileUpload.js";
 
 export default function App() {
 
