@@ -9,16 +9,15 @@ function ItemDetailContainer() {
     const [photo,setPhoto] = useState({});
     const [loading, setLoading] = useState(true);
     const {id} = useParams();
-    let idSplit = id.split('_');
   
     useEffect(() =>{
         const db = getFirestore()
-        const dbQuery = doc(db, `fotos`, `${idSplit[1]}`)
+        const dbQuery = doc(db, `fotos`, `${id}`)
         getDoc(dbQuery) 
         .then(resp => setPhoto( {id: resp.id, ...resp.data()}))
         .catch(err => console.error(err))
         .finally(setLoading(false));
-      }, [idSplit])
+      }, [id])
 
     return (
         <div>

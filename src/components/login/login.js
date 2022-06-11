@@ -42,6 +42,9 @@ export default function Login() {
                 <Link to="/upload">
                     <button>Subir foto</button>
                 </Link>
+                <Link to="/deleteItems">
+                    <button>Borrar fotos</button> 
+                </Link>
             </div>
         );
     } else if (loginStatus === false) {
