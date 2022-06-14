@@ -39,7 +39,6 @@
 .navBarUl li ul {
     display: none;
     position: absolute;
-
     background-color: black;
 }
 .navBarUl li:hover ul {
@@ -52,4 +51,3 @@
     height: 1px;
     margin: 2px 0 0 30px;
 }
-

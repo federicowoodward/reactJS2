@@ -2,7 +2,6 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable} from "firebase/s
 import React, { useState } from 'react';
 import ItemUpload from "./itemUpload";
 import "./upload.css";
-
 export default function Upload(){
     const [uploadState, setUpState] = useState(false);
     const [uploadImg, setImg] = useState();
@@ -22,14 +21,12 @@ export default function Upload(){
         if (num === 99) { Color("green5")
         }
     }
-
     function redirectToUpload() {
         setUpState(false);
         setColor(0);
         setProgress(0);
         setImg();
     }
-  
     function handleUpload(event) {
         const file = event.target.files[0];
         const storage = getStorage();

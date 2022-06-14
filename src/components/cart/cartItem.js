@@ -1,6 +1,5 @@
 import { UseCartContext } from "../../context/CartContext.js";
 import "./cartItem.css";
-
 export default function CartItem({item, quantity}) {
     const {clearPhoto} = UseCartContext();
     function removePhoto() {

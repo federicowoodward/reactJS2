@@ -1,8 +1,6 @@
 import { addDoc, collection, getFirestore, getDocs } from "firebase/firestore";
 import { createContext, useContext, useState } from "react";  
-
 const cartContext = createContext([]);
-
 export function UseCartContext() {
     return useContext(cartContext);
 }
@@ -30,14 +28,12 @@ export default function CartContextProv({children}){
     function clearCart() {
         udapteCart([]);
     }
-
     function clearPhoto(id) {
         let i = photosList.findIndex(photo => photo.id === id);
         const newPhotoList = photosList;
         newPhotoList.splice(i,1);
         udapteCart(newPhotoList);
     }
-
     function udapteCart(array) {
         setPhotoList(array);
         let result = array.map(item => item.quantity*item.photo.price)
@@ -49,24 +45,23 @@ export default function CartContextProv({children}){
         }
         setQA(QA);
     }
-    
-     
     function generateOrder(customer) {
         let order = {}
-        
+        let a = Math.random();
+        let b = Math.random();
+        let c = Math.random();
+
         let date = new Date();
-        let orderid = Math.random();
+        let orderid = a + b - c;
 
         order.buyer = customer;
         order.photos = photosList.map(photos => {
             const id = photos.photo.id;
             const alt = photos.photo.alt;
-            const price = photos.photo.price * photos.quantity;
             const quantity = photos.quantity;
-            return { id, alt, price, quantity }
+            return { id, alt, quantity }
         });
         order.date = { date: date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() }
-        order.total = photosPrice;
         order.randomid = orderid;
 
         const db = getFirestore();
@@ -76,11 +71,8 @@ export default function CartContextProv({children}){
         .finally(() => clearCart(), 
         )
         
-        
         orderId(orderid)
     }    
-        
-    
     function orderId(a) {
             const db = getFirestore();
             const queryCollection = collection(db, 'orders');

@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import CartPhoto from "../../assets/CartPhoto.js";
+import { Link } from "react-router-dom";
 import QA from "../cart/qa.js";
 import "./navBar.css";
-
 export default function NavBar() {
     return (
         <div >

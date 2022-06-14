@@ -18,5 +18,3 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export default function getFirestoreApp() {return app}
-
-// export const auth = firebase.auth(app);

@@ -20,7 +20,6 @@
     user-select: none;
     font-size: 13px;
 }
-
 .fancy::before {
     content: " ";
     width: 1.5625rem;
@@ -33,7 +32,6 @@
     transform-origin: center;
     transition: background 0.3s linear, width 0.3s linear;
 }
-
 .fancy .text {
     font-size: 1.125em;
     line-height: 1.33333em;
@@ -45,7 +43,6 @@
     text-decoration: none;
     color: black;
    }
-   
    .fancy .top-key {
        height: 2px;
        width: 1.5625rem;
@@ -55,7 +52,6 @@
        background: #e8e8e8;
        transition: width 0.5s ease-out, left 0.3s ease-out;
     }
-    
     .fancy .bottom-key-1 {
         height: 2px;
         width: 1.5625rem;
@@ -65,7 +61,6 @@
         background: #e8e8e8;
         transition: width 0.5s ease-out, right 0.3s ease-out;
     }
-    
     .fancy .bottom-key-2 {
         height: 2px;
         width: 0.625rem;
@@ -75,33 +70,27 @@
         background: #e8e8e8;
         transition: width 0.5s ease-out, right 0.3s ease-out;
     }
-    
     .fancy:hover {
         color: white;
         background: black;
     }
-    
     .fancy:hover::before {
         width: 0.9375rem;
         background: white;
     }
-    
     .fancy:hover .text {
     color: white;
     padding-left: 1.5em;
 }
-
 .fancy:hover .top-key {
     left: -2px;
     width: 0px;
 }
-
 .fancy:hover .bottom-key-1,
 .fancy:hover .bottom-key-2 {
     right: 0;
     width: 0;
 }
-
 .cart {
     display: flex;
     flex-direction: column;

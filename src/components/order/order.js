@@ -2,9 +2,7 @@
 import { UseCartContext } from "../../context/CartContext.js";
 import { useState } from "react";
 import "./order.css";
-
 export default function Order() {
-
     const {generateOrder, photosList} = UseCartContext();
     const [customer, setCustomer] = useState({});
     const [err, setErr] = useState(false);
@@ -45,7 +43,6 @@ export default function Order() {
         }
         setErr(true)
     };
-                
     function sendData() {
         delete customer.email2;
         generateOrder(customer);
@@ -54,13 +51,13 @@ export default function Order() {
         
     if (photosList.length === 0) {
         return (
-            <div><h4>Agrega productos antes de hacer un pedido!</h4></div>
+            <div>
+                <h4>Agrega productos antes de hacer un pedido!</h4>
+            </div>
         );
     }
     else {
-            
         return (
-
             <div className="orderBody">
                 <p>Ingrese sus datos para enviar el pedido:</p>
                 <form className="inputGroup" action="">
@@ -73,7 +70,7 @@ export default function Order() {
                 {err ? <p>Error: {errmessage}</p> : <p></p>}
                 {envoy ? <p>Pedido enviado!</p>:<button onClick={dataManage}>Enviar pedido</button> }
             </div>
-        )
+        );
     }
 }
 

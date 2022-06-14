@@ -1,4 +1,4 @@
-import "./introduce.css"
+import "./introduce.css";
 export default function introduccion() {
     return (
         <div>

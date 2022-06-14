@@ -1,9 +1,8 @@
 import { UseCartContext } from "../../context/CartContext.js";
-import { useState } from "react";
 import BuyButtons from "../buyButtons/buyButtons.js";
 import ItemCount from "../itemCount/itemCount.js";
+import { useState } from "react";
 import "./itemDetail.css";
-
 export default function ItemDetail({photo}) {
     const [inputType, setInputType] = useState("itemCount");
     const {addToCart} = UseCartContext();
@@ -19,7 +18,6 @@ export default function ItemDetail({photo}) {
             <div className='itemDetailInfo'>
                 <p className='itemDetailCliente'>Cliete: {photo.client}</p>
                 <p className="itemDetailDetail">Detalle: {photo.alt}</p>
-                <div className='buttons'></div>
                 { inputType === "itemCount" ?
                 <ItemCount initial={1} stock={2} onAdd={onAdd} />
                 :

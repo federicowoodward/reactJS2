@@ -1,10 +1,9 @@
 import { doc, getDoc, getFirestore} from "firebase/firestore";
+import ItemDetail from "../itemDetail/itemDetail.js";
 import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../itemDetail/itemDetail.js";
 import Loader from "../loader/loader.js";
 import './itemDetailContainer.css';
-
 function ItemDetailContainer() {
     const [photo,setPhoto] = useState({});
     const [loading, setLoading] = useState(true);

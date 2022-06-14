@@ -1,27 +1,24 @@
 import { doc, getDoc, getFirestore} from "firebase/firestore";
-import { useState }  from 'react';
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content';
-
+import { Link } from "react-router-dom";
+import { useState }  from 'react';
+import Swal from "sweetalert2";
 export default function Login() {
     const [login, generateLogin] = useState({})
     const [user, generateUser] = useState({})
     const [loginStatus, setStatus] = useState(false);
 
-        const db = getFirestore()
-        const dbQuery = doc(db, `user`, `PyQb0tAUR2vfx4oEasl2`)
-        getDoc(dbQuery) 
-        .then(resp => generateUser( {id: resp.id, ...resp.data()}))
+    const db = getFirestore()
+    const dbQuery = doc(db, `user`, `PyQb0tAUR2vfx4oEasl2`)
+    getDoc(dbQuery) 
+    .then(resp => generateUser( {id: resp.id, ...resp.data()}))
 
-    function generateCustomer(e) {
+    function generateLogin(e) {
         generateLogin({
             ...login,
             [e.target.name]: e.target.value
         });
-        
     }
-
     function compareLogin() {
         const MySwal = withReactContent(Swal)
         if (user.user === login.user && user.password === login.password) {
@@ -50,11 +47,10 @@ export default function Login() {
         );
     } else if (loginStatus === false) {
           return (
-
             <div className="orderBody">
                 <form className="inputGroup" action="">
-                    <input name="user" onChange={(e) => generateCustomer(e)} type="text" placeholder="Usuario" />
-                    <input name="password" autoComplete="on" onChange={(e) => generateCustomer(e)} type="password" placeholder="Contraseña" />
+                    <input name="user" onChange={(e) => generateLogin(e)} type="text" placeholder="Usuario" />
+                    <input name="password" autoComplete="on" onChange={(e) => generateLogin(e)} type="password" placeholder="Contraseña" />
                 </form>
                 <button onClick={compareLogin}>Entrar</button>
             </div>

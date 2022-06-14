@@ -1,6 +1,5 @@
 import { UseCartContext } from "../../context/CartContext.js";
 import "./qa.css";
-
 export default function QA() {
     const { photosQuantityAdedd } = UseCartContext();
     return (

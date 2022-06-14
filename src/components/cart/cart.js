@@ -1,21 +1,19 @@
 import { UseCartContext } from "../../context/CartContext.js";
 import { Link } from "react-router-dom";
 import CartItem from "./cartItem.js";
-import "./cart.css";
 import "./cartWithItem.css";
+import "./cart.css";
 
 export default function Cart() {
     const {photosList, clearCart} = UseCartContext();
-  
  
     if (photosList.length!==0) { 
         return (
             <div className="cartWithItems">
                 <h2> Haz agregado las siguientes fotos:</h2>
                 <div className="itemsContainer">
-                {photosList.map(item => <CartItem key={item.photo.id} item={item.photo} quantity={item.quantity}/>)}
+                    {photosList.map(item => <CartItem key={item.photo.id} item={item.photo} quantity={item.quantity}/>)}
                 </div>
-
                 <div className="cartButtons">
                     <div className="clearCartButton">
                         <button className="noselect" onClick={clearCart}>
@@ -33,22 +31,21 @@ export default function Cart() {
                         </button>
                     </Link>
                 </div>
-                
             </div>
         );
     }
     else {
         return (
             <div className="cart">
-            <h2>Agrega productos para verlos aqui!</h2>
-            <Link to="/fotos">
-                <div class="fancy">
-                    <span class="top-key"></span>
-                    <span class="text">Agrega fotos!</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </div>
-            </Link>
+                <h2>Agrega productos para verlos aqui!</h2>
+                <Link to="/fotos">
+                    <div class="fancy">
+                        <span class="top-key"></span>
+                        <span class="text">Agrega fotos!</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </div>
+                </Link>
             </div>
         );
     }

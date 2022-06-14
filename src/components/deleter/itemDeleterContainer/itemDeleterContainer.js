@@ -1,11 +1,11 @@
 import { collection, deleteDoc, getDocs, getFirestore,doc} from "firebase/firestore";
 import { getStorage, ref, deleteObject } from "firebase/storage";
+import withReactContent from 'sweetalert2-react-content';
+import ItemDeleter from '../itemDeleter/itemDeleter.js';
 import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
-import ItemDeleter from '../itemDeleter/itemDeleter.js';
 import Loader from '../../loader/loader.js';
 import Swal from "sweetalert2";
-import withReactContent from 'sweetalert2-react-content';
 
 function ItemListContainer (){
     const [picsList, setPicsList] = useState([]);
@@ -27,7 +27,6 @@ function ItemListContainer (){
     },[id])
 
     function deleteItem(a) {
-        console.log(a);
         const MySwal = withReactContent(Swal)
         const db = getFirestore()
         const storage = getStorage();
@@ -40,7 +39,7 @@ function ItemListContainer (){
             MySwal.fire({
                 title: <p>Imagen borrada!!</p>,
                 text: resp,
-                icon: "error"
+                icon: "success"
             }) )
         .catch(err => console.log(err))   
         .finally( window.location.reload());
