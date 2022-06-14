@@ -12,7 +12,7 @@ function ItemDetailContainer() {
   
     useEffect(() =>{
         const db = getFirestore()
-        const dbQuery = doc(db, `fotos`, `${id}`)
+        const dbQuery = doc(db, "fotos", `${id}`)
         getDoc(dbQuery) 
         .then(resp => setPhoto( {id: resp.id, ...resp.data()}))
         .catch(err => console.error(err))

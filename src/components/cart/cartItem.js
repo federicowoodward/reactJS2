@@ -7,8 +7,14 @@ export default function CartItem({item, quantity}) {
         clearPhoto(item.id);
     }
     return (
-        <li><img className="cartItemImg" src={item.imgUrl} alt={item.alt}/>- Cantidad: {quantity} - 
-        <button className="buttonDeleteItem" onClick={removePhoto}>Eliminar item</button>
-        </li>
+        <div className="cartItem">
+            <li>
+                <p>Cantidad: {quantity}</p>
+                <img className="cartItemImg" src={item.img} alt={item.alt}/> 
+                <span class="material-icons-outlined" onClick={removePhoto}>
+                    delete
+                </span>
+            </li>
+        </div>
     );
 }

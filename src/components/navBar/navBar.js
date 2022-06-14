@@ -14,9 +14,8 @@ export default function NavBar() {
                 </div>
                 <div>
                     <ul className="navBarUl">
-                       
                         <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="/category/all">Fotos</Link>
+                        <li><Link to="/category/">Fotos</Link>
                             <ul>
                                 <li><Link to="/category/autos">Autos</Link></li>
                                 <li><Link to="/category/fiesta">Fiesta</Link></li>
@@ -26,7 +25,7 @@ export default function NavBar() {
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
                         <li><Link to="/cart"><CartPhoto/></Link></li>
-                        < QA />
+                        <QA/>
                     </ul>
                 </div>
             </div>

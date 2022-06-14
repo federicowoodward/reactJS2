@@ -9,22 +9,22 @@ export default function ItemDetail({photo}) {
     const {addToCart} = UseCartContext();
 
     function onAdd(quantity) {
-        addToCart(photo, quantity);
+        addToCart({photo, quantity});
         setInputType("buyButtons");
     }
 
     return (
         <div className="itemDetail">
-            <img className="itemDetailImg" src={photo.img} alt="" />
+            <img className="itemDetailImg" src={photo.img} alt={photo.alt} />
             <div className='itemDetailInfo'>
-                <p className='itemDetailCliente'>{photo.client}</p>
-                <h3 className="itemDetailTitle">{photo.alt}</h3>
-                <p className="itemDetailDetail">{photo.alt}</p>
+                <p className='itemDetailCliente'>Cliete: {photo.client}</p>
+                <p className="itemDetailDetail">Detalle: {photo.alt}</p>
+                <div className='buttons'></div>
+                { inputType === "itemCount" ?
+                <ItemCount initial={1} stock={2} onAdd={onAdd} />
+                :
+                <BuyButtons/> }
             </div>
-        { inputType === "itemCount" ?
-        <ItemCount initial={1} stock={3} onAdd={onAdd} />
-        :
-        <BuyButtons/> }
         </div>
     );
 }

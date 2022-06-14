@@ -38,12 +38,13 @@ export default function Login() {
         return (
             <div  className="orderBody">
                 <h4>Login logrado</h4>
+                <p>Bienvenido: {user.user}</p>
                 <p>Opciones:</p>
                 <Link to="/upload">
                     <button>Subir foto</button>
                 </Link>
-                <Link to="/deleteItems">
-                    <button>Borrar fotos</button> 
+                <Link to="/deleter">
+                    <button>Eliminar fotos</button>
                 </Link>
             </div>
         );

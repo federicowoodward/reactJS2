@@ -1,3 +1,29 @@
-.itemDetailImg {
-    height: 200px;
+.itemDetail {  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "itemDetailImg itemDetailInfo";
+  }
+  
+  .itemDetailImg { 
+    grid-area: itemDetailImg;
+    height: 86vh;
+    justify-self: center;
 }
+  
+  .itemDetailInfo {
+    padding: 5px;
+    margin: 15px;
+    justify-self: center;
+    align-self: center;
+    grid-area: itemDetailInfo;
+    background-color: var(--main-background-color);
+    border-radius: 10px;
+  }
+  .itemDetailInfo p {
+    text-align: center;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 19px;
+  }

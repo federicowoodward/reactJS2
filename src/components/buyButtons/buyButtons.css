@@ -1,9 +1,9 @@
 /* From uiverse.io by @Voxybuns */
-.buttonsItemCount button {
+.buyButtons button {
    --button_radius: 0.75em;
    --button_color: #e8e8e8;
    --button_outline_color: #000000;
-   font-size: 12px;
+   font-size: 17px;
    font-weight: bold;
    border: none;
    border-radius: var(--button_radius);
@@ -11,11 +11,6 @@
    margin: 5px;
    margin-left: 15%;
   }
-
-  .buttonsItemCount .add {
-    font-size: 15px;
-    margin-left: 12%;
-  }  
   
   .button_top {
    display: block;
@@ -29,14 +24,12 @@
    transition: transform 0.1s ease;
   }
   
-  .buttonsItemCount button:hover .button_top {
+  .buyButtons button:hover .button_top {
    transform: translateY(-0.33em);
   }
   
-  .buttonsItemCount button:active .button_top {
+  .buyButtons button:active .button_top {
    transform: translateY(0);
   }
 
-  .photosAdded {
-    color: white;
-  }
+  

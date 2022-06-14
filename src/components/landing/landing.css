@@ -2,24 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 .fondoFiltro {
     background-color: rgba(0, 0, 0, 0.78);
-    height: 100vh;
-    width: 210vh;
+    height: 90vh;
+    width: 100%;
     margin-bottom: 10px;
     position: absolute;
-    z-index: 1;
-    top: 86px;
+    top: 83px;
 }
 .landing {
     position: absolute;
     z-index: 12;
 }
-h1 {
+.landing h1 {
     font-size: 55px;
     color: #fff;
     font-family: 'Rock Salt', cursive;
 }
 
-h4 {
+.landing h4 {
     font-family: 'Koulen', cursive;
     font-size: 20px;
     color: #fff;
@@ -35,16 +34,16 @@ h4 {
     height:  50%;
     flex-direction: column;
 }
-h1 {
+.landing h1 {
     margin-left: 50px;
     margin-bottom: 10px;
 }
-figure h4 {
+.landing figure h4 {
     position: absolute;
     top: 140px;
     right: -90px;
 }
-button {
+.landing button {
     margin-bottom: -20px;
 }
 /* boton */
@@ -155,8 +154,9 @@ button {
 
 
 /* configuracion del relleno para q el footer se mantenga abajo y el contenido no se ponga encima del landing */
-.relleno {
-    background-color: transparent;
-    height: 100vh;
+.mainLanding .relleno {
+    background-image: url(https://img2.wallspic.com/previews/0/7/9/8/4/148970/148970-negro-oceano-textura-cuerpo_de_agua-agua-x750.jpg);
+    background-size: cover;
+    height: 90vh;
     width: 100%;
 }

@@ -11,8 +11,8 @@ function ItemListContainer (){
     const {id} = useParams();
     useEffect(() => {
         const db = getFirestore()
-        const queryCollection = collection(db,"fotos");
-        const queryCollectionFilter = id === "photos" ? queryCollection :  query(collection(db, "fotos"), where("category", "==", `${id}`));
+        let queryCollection =   collection(db,"fotos");;
+        const queryCollectionFilter = !id ?  queryCollection : query(collection(db, "fotos"), where("category", "==", `${id}`));
         getDocs(queryCollectionFilter)
         .then ( resp => {
             if (resp.size === 0) {
@@ -20,7 +20,7 @@ function ItemListContainer (){
             } else {
                 setPicsList( resp.docs.map(item => ({id: item.id, ...item.data()})))}})
                 .catch(err => console.log(err))
-        .finally(setTimeout(() => setLoading(false), 4000));
+        .finally(setTimeout(() => setLoading(false), 2000));
     },[id])
     return (
         <div>

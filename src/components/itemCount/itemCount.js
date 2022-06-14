@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
 import "./itemCount.css";
 
-export default function ItemCount({initial ,  onAdd}) {
+export default function ItemCount({initial , stock, onAdd}) {
     const [count, setCount] = useState(initial);
 
-    const add = () => {if(count < 3) setCount(count+1)}
+    const add = () => {if(count < stock) setCount(count+1)}
     const less = () => setCount(count-1)
     if (count === 0) { setCount(count+1) }
     function addItem() {
         onAdd(count)
     }
     return (
-        <div className="botonFotos">
-            <span className="fotosAñadidas"><p>{count}</p></span>
-            <button className="btnMas" onClick={add}> + </button>
-            <button className="btnMen" onClick={less}> - </button>
-            <button onClick={addItem}> Añadir al carrito </button>
+        <div className="itemCount">
+            <span className="photosAdded"><p>{count}</p></span>
+            <div className="buttonsItemCount">
+                <button>
+                    <span className="button_top" onClick={add}> + </span>
+                </button>
+                <button>
+                    <span className="button_top" onClick={less}> - </span>
+                </button>
+                <button className="add">
+                    <span className="button_top" onClick={addItem}> Añadir al carrito </span>
+                </button>
+            </div>
         </div>
     )
     

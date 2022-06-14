@@ -1,0 +1,117 @@
+.cartWithItems {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-background-color);
+    margin: 40px;
+    padding: 15px;
+    border: 1px solid black;
+}
+.cartWithItems h2 {
+    text-align: center;
+}
+.cartButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+
+
+/* back to menu button */
+
+.cartWithItems button {
+   --button_radius: 0.75em;
+   --button_color: #e8e8e8;
+   --button_outline_color: #000000;
+   font-size: 17px;
+   font-weight: bold;
+   border: none;
+   border-radius: var(--button_radius);
+   background: var(--button_outline_color);
+   margin: 5px;
+   margin-left: 15%;
+  }
+  
+  .cartWithItems .button_top {
+   display: block;
+   box-sizing: border-box;
+   border: 2px solid var(--button_outline_color);
+   border-radius: var(--button_radius);
+   padding: 0.75em 1.5em;
+   background: var(--button_color);
+   color: var(--button_outline_color);
+   transform: translateY(-0.2em);
+   transition: transform 0.1s ease;
+  }
+  
+  .cartWithItems button:hover .button_top {
+   transform: translateY(-0.33em);
+  }
+  
+  .cartWithItems button:active .button_top {
+   transform: translateY(0);
+  }
+
+  /* clear cart button */
+
+.clearCartButton button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+   }
+   
+   .clearCartButton button, .clearCartButton button span {
+    transition: 200ms;
+   }
+   
+   .clearCartButton button .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   .clearCartButton button .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .clearCartButton button svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   .clearCartButton button:hover {
+    background: #ff3636;
+   }
+   
+   .clearCartButton button:hover .text {
+    color: transparent;
+   }
+   
+   .clearCartButton button:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   .clearCartButton button:focus {
+    outline: none;
+   }
+   
+   .clearCartButton button:active .icon svg {
+    transform: scale(0.8);
+   }
