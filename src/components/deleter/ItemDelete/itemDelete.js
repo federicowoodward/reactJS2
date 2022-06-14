@@ -3,7 +3,7 @@ import { React} from 'react';
 export default function Item({ photo, deleter }){
 
     function deleteItem() {
-        deleter(photo.id)
+        deleter(photo)
     }
 
   return (

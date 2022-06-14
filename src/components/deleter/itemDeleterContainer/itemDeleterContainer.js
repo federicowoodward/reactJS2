@@ -1,4 +1,5 @@
 import { collection, deleteDoc, getDocs, getFirestore,doc} from "firebase/firestore";
+import { getStorage, ref, deleteObject } from "firebase/storage";
 import { useEffect, useState, memo } from "react";
 import { useParams } from "react-router-dom";
 import ItemDeleter from '../itemDeleter/itemDeleter.js';
@@ -26,15 +27,23 @@ function ItemListContainer (){
     },[id])
 
     function deleteItem(a) {
+        console.log(a);
         const MySwal = withReactContent(Swal)
         const db = getFirestore()
-        deleteDoc(doc(db, "fotos", `${a}` ))
+        const storage = getStorage();
+        deleteDoc(doc(db, "fotos", `${a.id}` ))
+        .then(() => {
+            const desertRef = ref(storage, `${a.img}`);
+            deleteObject(desertRef)
+        })
         .then ( resp => 
             MySwal.fire({
                 title: <p>Imagen borrada!!</p>,
-                html: <h4>{resp}</h4>,
+                text: resp,
                 icon: "error"
             }) )
+        .catch(err => console.log(err))   
+        .finally( window.location.reload());
     }
 
     return (
