@@ -1,9 +1,9 @@
-
 import { UseCartContext } from "../../context/CartContext.js";
+import ShowOrder from "./showOrder.js";
 import { useState } from "react";
 import "./order.css";
 export default function Order() {
-    const {generateOrder, photosList} = UseCartContext();
+    const {generateOrder} = UseCartContext();
     const [customer, setCustomer] = useState({});
     const [err, setErr] = useState(false);
     const [errmessage, setErrMsg] = useState("a");
@@ -24,11 +24,10 @@ export default function Order() {
         if (!validName(customer.name) === true) {  
             catchErr("name")
         }
-        
         if (customer.number < 10 ) {
             catchErr("number")
         }
-        sendData()
+        sendData();
     }
     function catchErr(err) {
         switch (err) {
@@ -48,15 +47,7 @@ export default function Order() {
         generateOrder(customer);
         setEnvoy(true);
     }
-        
-    if (photosList.length === 0) {
-        return (
-            <div>
-                <h4>Agrega productos antes de hacer un pedido!</h4>
-            </div>
-        );
-    }
-    else {
+    if (envoy === false) {
         return (
             <div className="orderBody">
                 <p>Ingrese sus datos para enviar el pedido:</p>
@@ -68,7 +59,14 @@ export default function Order() {
                     <textarea name="comment" onChange={(e) => generateCustomer(e)} id="" cols="20" rows="2"></textarea>
                 </form>
                 {err ? <p>Error: {errmessage}</p> : <p></p>}
-                {envoy ? <p>Pedido enviado!</p>:<button onClick={dataManage}>Enviar pedido</button> }
+                <button onClick={dataManage}>Enviar pedido</button> 
+            </div>
+        );
+    }    
+    else {
+        return (
+            <div>
+                < ShowOrder/>
             </div>
         );
     }

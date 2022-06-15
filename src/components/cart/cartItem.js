@@ -10,7 +10,7 @@ export default function CartItem({item, quantity}) {
             <li>
                 <p>Cantidad: {quantity}</p>
                 <img className="cartItemImg" src={item.img} alt={item.alt}/> 
-                <span class="material-icons-outlined" onClick={removePhoto}>
+                <span className="material-icons-outlined" onClick={removePhoto}>
                     delete
                 </span>
             </li>

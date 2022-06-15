@@ -27,7 +27,7 @@ export default function Cart() {
                     </div>
                     <Link to="/order">
                         <button>
-                            <span className="button_top" >Volver al menú</span>
+                            <span className="button_top" >Enviar pedido</span>
                         </button>
                     </Link>
                 </div>
@@ -37,7 +37,7 @@ export default function Cart() {
     else {
         return (
             <div className="cart">
-                <h2>Agrega productos para verlos aqui!</h2>
+                <h2>No hay fotos agregadas.</h2>
                 <Link to="/fotos">
                     <div class="fancy">
                         <span class="top-key"></span>

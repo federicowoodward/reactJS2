@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore, getDocs } from "firebase/firestore";
+import { addDoc, collection, getFirestore, getDocs, doc, updateDoc, deleteField } from "firebase/firestore";
 import { createContext, useContext, useState } from "react";  
 const cartContext = createContext([]);
 export function UseCartContext() {
@@ -7,8 +7,8 @@ export function UseCartContext() {
 
 export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([]);
-    const [photosPrice, addPricePhoto] = useState(0);
     const [photosQuantityAdedd, setQA] = useState(0)
+    const [orderRealId, setRealId] = useState(0);
 
     function isInCart(id){
         return photosList.some(photo => photo.photo.id === id)
@@ -36,24 +36,20 @@ export default function CartContextProv({children}){
     }
     function udapteCart(array) {
         setPhotoList(array);
-        let result = array.map(item => item.quantity*item.photo.price)
-        let resultReduce = result.reduce((a,b) => a + b, 0);
-        addPricePhoto(resultReduce);
         let QA = 0;
         for(let i = 0; i < array.length; i++) {
             QA += array[i].quantity;
         }
         setQA(QA);
     }
+    let date = new Date();
+    let orderDate = date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() 
+
     function generateOrder(customer) {
         let order = {}
-        let a = Math.random();
-        let b = Math.random();
-        let c = Math.random();
 
-        let date = new Date();
-        let orderid = a + b - c;
-
+        let orderid = Math.random();
+        
         order.buyer = customer;
         order.photos = photosList.map(photos => {
             const id = photos.photo.id;
@@ -61,7 +57,7 @@ export default function CartContextProv({children}){
             const quantity = photos.quantity;
             return { id, alt, quantity }
         });
-        order.date = { date: date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() }
+        order.date = orderDate;
         order.randomid = orderid;
 
         const db = getFirestore();
@@ -71,26 +67,36 @@ export default function CartContextProv({children}){
         .finally(() => clearCart(), 
         )
         
-        orderId(orderid)
+        orderId(orderid);
     }    
     function orderId(a) {
+        const db = getFirestore();
+        const queryCollection = collection(db, 'orders');
+        getDocs(queryCollection)
+        .then ( resp =>
+            resp.docs.map(item => ({id: item.id, ...item.data()}))
+            .map(item => item.randomid === a && setRealId(item.id)))
+        .finally( deleteRandomId())
+    }
+    function deleteRandomId() {
+          if (orderRealId !== 0) {
             const db = getFirestore();
-            const queryCollection = collection(db, 'orders');
-            getDocs(queryCollection)
-            .then ( resp =>
-                resp.docs.map(item => ({id: item.id, ...item.data()}))
-                .map(item => item.randomid === a && alert(item.id)))
-            }
-
+            const orderRef = doc(db, 'orders', `${orderRealId}`);
+            updateDoc(orderRef, {
+                randomid: deleteField()
+            }); 
+        }
+    }
+           
     return (
         <cartContext.Provider value={{
             photosList,
             addToCart,
             clearCart,
             clearPhoto,
-            photosPrice,
             photosQuantityAdedd,
             generateOrder,
+            orderRealId
         }}>
             {children}
         </cartContext.Provider> 

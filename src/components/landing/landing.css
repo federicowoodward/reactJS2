@@ -93,8 +93,11 @@
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
     text-decoration: none;
+    list-style: none;
     color: black;
    }
+
+
    
    .fancy .top-key {
     height: 2px;

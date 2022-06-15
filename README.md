@@ -23,8 +23,22 @@ Abrir: [http://localhost:3000](http://localhost:3000) para ver en tu navegador.
 
 ## CSS Reglas utilizadas en este proyecto: 
 
-Color general para fondos de elementos:`--main-background-color`
-Convencion de clases: `camelCase`
+Color general para fondos de elementos:`--main-background-color`.
+
+Convencion de clases: `camelCase`.
+
+### Librerias y Apis usadas:
+
+[Sweet Alert 2 React "^5.0.0"](https://github.com/sweetalert2/sweetalert2-react-content).
+
+Botones y loaders de [universe.io](https://uiverse.io/).
+
+### Firebase:
+Usos de firebase: 
+
+`Firestore Database`.
+
+`Storage`.
 
 ## Que puede hacer el usuario?
 
