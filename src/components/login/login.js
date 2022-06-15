@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useState }  from 'react';
 import Swal from "sweetalert2";
 export default function Login() {
-    const [login, generateLogin] = useState({})
+    const [login, setLogin] = useState({})
     const [user, generateUser] = useState({})
     const [loginStatus, setStatus] = useState(false);
 
@@ -14,7 +14,7 @@ export default function Login() {
     .then(resp => generateUser( {id: resp.id, ...resp.data()}))
 
     function generateLogin(e) {
-        generateLogin({
+        setLogin({
             ...login,
             [e.target.name]: e.target.value
         });
