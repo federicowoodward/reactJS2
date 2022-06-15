@@ -9,17 +9,28 @@ export default function Upload(){
     const [color, Color] = useState("white");
 
     function setColor(num) {
-        if (num === 0) { Color("white")}
-        if (num === 20) { Color("green1")
-        }
-        if (num === 40) { Color("green2")
-        }
-        if (num === 60) { Color("green3")
-    }
-        if (num === 80) { Color("green4")
-        }
-        if (num === 99) { Color("green5")
-        }
+        switch(num) {
+            case 0:
+                Color("white")
+                break;
+            case 20:
+                Color("green1")
+                break;
+            case 40:
+                Color("green2")
+                break;
+            case 60:
+                Color("green3")
+                break;
+            case 80:
+                Color("green4")
+                break;
+            case 99:
+                Color("green5")
+                break;
+            default:
+                Color("white");
+        }  
     }
     function redirectToUpload() {
         setUpState(false);

@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Proyecto Franco Peña fotografia.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
