@@ -8,9 +8,9 @@ export default function BuyButtons() {
                     <span className="button_top" >Ver carrito</span>
                 </button>
             </Link>
-            <Link to='/'>
+            <Link to="/category/" >
                 <button>
-                    <span className="button_top" >Volver al menú</span>
+                    <span className="button_top" >Seguir comprando</span>
                 </button>
             </Link>
         </div>

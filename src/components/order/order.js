@@ -17,7 +17,7 @@ export default function Order() {
     }
     function dataManage() {
         const validName = (name) => /^[a-zA-Z ]+$/.test(name);
-        
+
         if (customer.email !== customer.email2){
             catchErr("email");
         } 

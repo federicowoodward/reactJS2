@@ -17,10 +17,9 @@ export default function ShowOrder() {
         .catch(err => console.error(err))
         .finally(setStatus(true));
     },[orderRealId])
-   
     return (
         <div>
-            { orderStatus ? <ItemShowOrder order={order}/> : <Loader />}
+            { orderStatus ? <ItemShowOrder key={order.id} order={order}/> : <Loader />}
         </div>
     );
 }

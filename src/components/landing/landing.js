@@ -11,7 +11,7 @@ export default function landing() {
             </figure>
                 <Link to="/category/">
                     <button>
-                            <div className="fancy" href="/category/">
+                            <div className="fancy">
                                 <span className="top-key"></span>
                                 <span className="text">Ver fotos</span>
                                 <span className="bottom-key-1"></span>

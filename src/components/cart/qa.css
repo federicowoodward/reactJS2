@@ -1,12 +1,26 @@
 .numberQA {
-    color: white;
+    color: black;
     position: absolute;
-    top: 22px;
-    right: 54px;
+    top: 40px;
+    right: 44px;
+    background-color: #FFF;
+    height: 15px;
+    width: 15px;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    text-align: center;
 }
 .numberQA10 {
-    color: white;
+    color: black;
     position: absolute;
-    top: 22px;
-    right: 56px;
+    top: 40px;
+    right: 41px;
+    background-color: #FFF;
+    height: 16px;
+    width: 16px;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    text-align: center;
 }

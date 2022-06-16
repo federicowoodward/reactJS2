@@ -47,7 +47,6 @@ export default function CartContextProv({children}){
 
     function generateOrder(customer) {
         let order = {}
-
         let orderid = Math.random();
         
         order.buyer = customer;
@@ -64,10 +63,11 @@ export default function CartContextProv({children}){
         const queryCollection = collection(db, 'orders');
         addDoc(queryCollection, order)
         .catch(err => console.log(err))
-        .finally(() => clearCart(), 
+        .finally(() => 
+        clearCart(), 
         )
         
-        orderId(orderid);
+        orderId(orderid)
     }    
     function orderId(a) {
         const db = getFirestore();
@@ -75,17 +75,15 @@ export default function CartContextProv({children}){
         getDocs(queryCollection)
         .then ( resp =>
             resp.docs.map(item => ({id: item.id, ...item.data()}))
-            .map(item => item.randomid === a && setRealId(item.id)))
-        .finally( deleteRandomId())
+            .map(item => item.randomid === a && deleteRandomId(item)))
     }
-    function deleteRandomId() {
-          if (orderRealId !== 0) {
-            const db = getFirestore();
-            const orderRef = doc(db, 'orders', `${orderRealId}`);
-            updateDoc(orderRef, {
-                randomid: deleteField()
-            }); 
-        }
+    function deleteRandomId(item) {
+        const db = getFirestore();
+        const orderRef = doc(db, 'orders', `${item.id}`);
+        updateDoc(orderRef, {
+            randomid: deleteField()
+        }) 
+        .then(setRealId(item.id))
     }
            
     return (

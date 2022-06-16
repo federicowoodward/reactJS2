@@ -1,0 +1,8 @@
+.showOrderContainer {
+    background-color: var(--main-background-color);
+    height: 100%;
+    margin: 25vh 45vh;
+    text-align: center;
+    border-top: 3px solid black;
+    border-radius: 35px;
+}

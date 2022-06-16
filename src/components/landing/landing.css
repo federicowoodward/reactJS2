@@ -17,7 +17,6 @@
     color: #fff;
     font-family: 'Rock Salt', cursive;
 }
-
 .landing h4 {
     font-family: 'Koulen', cursive;
     font-size: 20px;
@@ -70,7 +69,6 @@
     user-select: none;
     font-size: 13px;
    }
-   
    .fancy::before {
     content: " ";
     width: 1.5625rem;
@@ -83,7 +81,6 @@
     transform-origin: center;
     transition:  0.3s linear, width 0.3s linear;
    }
-   
    .fancy .text {
     font-size: 1.125em;
     line-height: 1.33333em;
@@ -96,9 +93,6 @@
     list-style: none;
     color: black;
    }
-
-
-   
    .fancy .top-key {
     height: 2px;
     width: 1.5625rem;
@@ -108,7 +102,6 @@
     background: #e8e8e8;
     transition: width 0.5s ease-out, left 0.3s ease-out;
    }
-   
    .fancy .bottom-key-1 {
     height: 2px;
     width: 1.5625rem;
@@ -118,7 +111,6 @@
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
    }
-   
    .fancy .bottom-key-2 {
     height: 2px;
     width: 0.625rem;
@@ -128,35 +120,27 @@
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
    }
-   
    .fancy:hover {
     color: white;
     background: black;
    }
-   
    .fancy:hover::before {
     width: 0.9375rem;
     background: white;
    }
-   
    .fancy:hover .text {
     color: white;
     padding-left: 1.5em;
    }
-   
    .fancy:hover .top-key {
     left: -2px;
     width: 0px;
    }
-   
    .fancy:hover .bottom-key-1,
     .fancy:hover .bottom-key-2 {
     right: 0;
     width: 0;
    }
-
-
-/* configuracion del relleno para q el footer se mantenga abajo y el contenido no se ponga encima del landing */
 .mainLanding .relleno {
     background-image: url(https://img2.wallspic.com/previews/0/7/9/8/4/148970/148970-negro-oceano-textura-cuerpo_de_agua-agua-x750.jpg);
     background-size: cover;

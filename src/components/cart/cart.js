@@ -38,7 +38,7 @@ export default function Cart() {
         return (
             <div className="cart">
                 <h2>No hay fotos agregadas.</h2>
-                <Link to="/fotos">
+                <Link to="/category/">
                     <div class="fancy">
                         <span class="top-key"></span>
                         <span class="text">Agrega fotos!</span>
