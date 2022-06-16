@@ -46,6 +46,6 @@ Comenzando por el landing de la pagina podra acceder a todas las fotos publicada
 Ademas podra generar una orden agregando las fotos que le interese para que el dueño de la pagina pueda saber con cuales armar su carpeta drive. Acceder al carrito con las fotos agregadas, y eliminarlas si se arrepiente de alguna. 
 Ademas podra contactarse con el fotografo mediante varios recursos disponibles. 
 
-## Herramientas para el usuario.
+## Herramientas para el Dueño.
 
 Luego de efectuar el login  `/login` accedera a una consola donde podra elegir subir fotos a cualquier categoria, y borrar fotos de todas las categorias.
