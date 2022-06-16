@@ -18,7 +18,7 @@ export default function App() {
   return (
     <BrowserRouter>
         <CartContextProv value={{}}>
-            <div>
+            <div className="appContainer">
                 <NavBar/>
                 <Routes>
                     <Route path="/" element={<Landing/>} />
