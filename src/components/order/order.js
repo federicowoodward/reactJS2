@@ -1,5 +1,5 @@
 import { UseCartContext } from "../../context/CartContext.js";
-import ShowOrder from "./showOrder.js";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./order.css";
 export default function Order() {
@@ -65,8 +65,10 @@ export default function Order() {
     }    
     else {
         return (
-            <div>
-                < ShowOrder/>
+            <div className="orderBody">
+                <Link to="/showOrder">
+                    <button>Ver pedido</button>
+                </Link>
             </div>
         );
     }

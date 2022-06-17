@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore, getDocs, doc, updateDoc, deleteField } from "firebase/firestore";
+import { addDoc, collection, getFirestore} from "firebase/firestore";
 import { createContext, useContext, useState } from "react";  
 const cartContext = createContext([]);
 export function UseCartContext() {
@@ -8,7 +8,7 @@ export function UseCartContext() {
 export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([]);
     const [photosQuantityAdedd, setQA] = useState(0)
-    const [orderRealId, setRealId] = useState(0);
+    const [orderReady, setOrder] = useState({});
 
     function isInCart(id){
         return photosList.some(photo => photo.photo.id === id)
@@ -42,10 +42,10 @@ export default function CartContextProv({children}){
         }
         setQA(QA);
     }
-    let date = new Date();
-    let orderDate = date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() 
-
+    
     function generateOrder(customer) {
+        let date = new Date();
+        let orderDate = date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() 
         let order = {}
         let orderid = Math.random();
         
@@ -63,28 +63,11 @@ export default function CartContextProv({children}){
         const queryCollection = collection(db, 'orders');
         addDoc(queryCollection, order)
         .catch(err => console.log(err))
-        .finally(() => 
-        clearCart(), 
-        )
-        
-        orderId(orderid)
+        .finally(() => clearCart())
+
+        setOrder(orderid)
     }    
-    function orderId(a) {
-        const db = getFirestore();
-        const queryCollection = collection(db, 'orders');
-        getDocs(queryCollection)
-        .then ( resp =>
-            resp.docs.map(item => ({id: item.id, ...item.data()}))
-            .map(item => item.randomid === a && deleteRandomId(item)))
-    }
-    function deleteRandomId(item) {
-        const db = getFirestore();
-        const orderRef = doc(db, 'orders', `${item.id}`);
-        updateDoc(orderRef, {
-            randomid: deleteField()
-        }) 
-        .then(setRealId(item.id))
-    }
+
            
     return (
         <cartContext.Provider value={{
@@ -94,7 +77,7 @@ export default function CartContextProv({children}){
             clearPhoto,
             photosQuantityAdedd,
             generateOrder,
-            orderRealId
+            orderReady
         }}>
             {children}
         </cartContext.Provider> 

@@ -10,6 +10,7 @@ import Landing from './components/landing/landing.js';
 import Footer from './components/footer/footer.js';
 import NavBar from './components/navBar/navBar';
 import Order from "./components/order/order.js";
+import ShowOrder from "./components/order/showOrder.js";
 import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart.js";
 import './App.css';
@@ -33,6 +34,7 @@ export default function App() {
                     <Route path="/login" element = { < Login /> } />
                     <Route path="/upload" element = { <Upload />} />
                     <Route path="/deleter" element = { < ItemDeleterContainer />} />
+                    <Route path="/showOrder" element = { <ShowOrder />} />
                     <Route path="/*" element = { <Navigate to="/" replace /> } />
                 </Routes>
                 <Footer/> 
