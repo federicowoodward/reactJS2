@@ -42,7 +42,6 @@ export default function CartContextProv({children}){
         }
         setQA(QA);
     }
-    
     function generateOrder(customer) {
         let date = new Date();
         let orderDate = date.getDate() + "/" + (date.getMonth() +1) + "/" + date.getFullYear() 
@@ -67,7 +66,6 @@ export default function CartContextProv({children}){
 
         setOrder(orderid)
     }    
-
            
     return (
         <cartContext.Provider value={{
