@@ -13,3 +13,92 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Alegreya Sans', sans-serif;
 }
+
+/* responsive */
+
+.navBar .hamburger {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    line-height: 60px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+  
+    .navBar .hamburger {
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding-top: 15px;
+        background-color: black;
+        width: 80px;
+        z-index: 200;
+    }
+    .navBar .cartImg {
+        position: absolute;
+        right: 50%;
+    }
+    .navBarUl {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.911);
+        width: 100%;
+        height: 100vh;        
+        left: 10000px;
+        z-index: 100;
+    }
+    .navBarUl li {
+        margin-top: 50px;
+    }
+    .navBarUl li a {
+        font-size: 35px;
+    }
+    .navBarUl li a::before {
+        background: transparent;
+    }
+    .navBarUl li ul {
+        display: none;
+    }
+    .navBarUl li:hover ul {
+        display: flex;
+        flex-direction: column;
+        background-color:   rgba(0, 0, 0, 0);
+        position: absolute;
+        top: -61px;
+        right: 4vh;
+        padding: 0;
+        margin: 0;
+        z-index: 9999;
+    }
+    .navBarUl li:hover ul li a {
+        font-size: 30px;
+    }
+    .navBarUl_visibility { 
+        top: 0;
+        right: 0;
+        left: 0;
+        transition: left 0.8s;
+    }
+}
+
+@media (max-width: 550px) {
+    .navBarUl li a {
+        font-size: 20px;
+    }
+    .navBarUl li:hover ul li a {
+        font-size: 17px;
+    }
+}
+@media (max-width: 400px) {
+    .navBarUl li a {
+        font-size: 15px;
+    }
+    .navBarUl li:hover ul li a {
+        font-size: 11px;
+    }
+}
