@@ -8,60 +8,61 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 1vh 0;
+    margin: 2.2vh 2.2vh;
 }
 
 @media (max-width: 1000px) {
     .itemList {
         columns: 65vh auto;
+        margin: 1.7vh 1.7vh;
     }
-    .itemImg {
-        width:  65vh;
+  .itemImg { 
+        width:  100%;
     }
 }
 
 @media (max-width: 800px) {
     .itemList {
         columns: 55vh auto;
+        margin: 1.5vh 1.5vh;
     }
-    .itemImg {
-        width:  55vh;
+    .itemImg { 
+        width:  100%;
     }
 }
 @media (max-width: 700px) {
     .itemList {
         columns: 50vh auto;
+        margin: 1.5vh 1.5vh;
     }
-    .itemImg {
-        width:  50vh;
+    .itemImg { 
+        width:  100%;
     }
 }
 @media (max-width: 630px) {
     .itemList {
-        columns: 100vh 1;
-        margin: 0 5px;
+        columns: 100% 1;
+        margin: 1.5vh 1.5vh;
     }
     .itemImg {
-        width:  70vh;
+        width:  100%;
     }
 }
 @media (max-width: 450px) {
     .itemList {
-        columns: 100vh 1;
-        margin: 0 5px;
+        columns: 100% 1;
+        margin: 1vh 1vh;
     }
     .itemImg {
-        width:  50vh;
-        margin-bottom: 10px;
+        width:  100%;
     }
 }
 @media (max-width: 330px) {
     .itemList {
-        columns: 100vh 1;
-        margin: 0 10px;
+        columns: 100% 1;
+        margin: 0.6vh 0.6vh;
     }
     .itemImg {
-        width: 100%;
-        margin-bottom: 20px 10px;
+        width:  100%;
     }
 }

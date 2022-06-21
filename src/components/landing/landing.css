@@ -4,47 +4,23 @@
     background-color: rgba(0, 0, 0, 0.78);
     height: 90vh;
     width: 100%;
-    margin-bottom: 10px;
     position: absolute;
-    top: 80px;
 }
 .landing {
     position: absolute;
     z-index: 12;
 }
 .landing h1 {
-    font-size: 55px;
+    font-size: 65px;
     color: #fff;
     font-family: 'Rock Salt', cursive;
 }
 .landing h4 {
     font-family: 'Koulen', cursive;
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
 }
-/* posicionamento */
-.landing {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    align-content: flex-start;
-    width: 50%;
-    height:  50%;
-    flex-direction: column;
-}
-.landing h1 {
-    margin-left: 50px;
-    margin-bottom: 10px;
-}
-.landing figure h4 {
-    position: absolute;
-    top: 175px;
-    right: -90px;
-}
-.landing button {
-    margin-bottom: -20px;
-}
+
 /* boton */
 /* From uiverse.io */
 .fancy {
@@ -146,4 +122,62 @@
     background-size: cover;
     height: 90vh;
     width: 100%;
+}
+/* positioning */
+.landing figure h4 {
+    padding-top: 50%;
+    margin-left: 3vh;
+}
+.boxText {
+    display: flex;
+    margin: 20% 0 0 16vh;
+}
+.boxButtonLanding {
+    margin-top: 2vh;
+    text-align: center;
+}
+/* responsive */
+@media (max-width: 1000px) {
+    .landing h1 {
+        font-size: 45px;
+    }
+    .landing h4 {
+        font-size: 25px;
+    }
+}
+@media (max-width: 768px) {
+    .landing h1 {
+        font-size: 35px;
+    }
+    .landing h4 {
+        font-size: 15px;
+    }
+}
+@media (max-width: 550px) {
+    .fondoFiltro {
+        height: 80vh;
+    }
+    .mainLanding .relleno {
+        height: 80vh;
+    }
+    .boxText {
+        margin-top: 50%;
+        display: block;
+    }
+    .landing h1 {
+        font-size: 30px;
+    }
+    .landing figure h4 {
+        padding: 0;
+        margin: 0;
+        font-size: 25px;
+    }
+}
+@media (max-width: 400px) {
+    .landing h1 {
+        font-size: 20px;
+    }
+    .landing h4 {
+        font-size: 10px;
+    }
 }

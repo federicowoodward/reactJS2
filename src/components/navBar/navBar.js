@@ -32,11 +32,11 @@ export default function NavBar() {
                         </li>
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
-                        <QA/>
                     </ul>
                 </div>
                 <div className="cartImg">
-                <Link to="/cart"><CartPhoto/></Link>
+                    <Link to="/cart"><CartPhoto/></Link>
+                    <QA/>
                 </div>
             </div>
         </div>
