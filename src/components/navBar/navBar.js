@@ -1,20 +1,29 @@
 import CartPhoto from "../../assets/CartPhoto.js";
+import Logo from "../../assets/1624241171268.svg";
 import { Link } from "react-router-dom";
 import QA from "../cart/qa.js";
 import "./navBar.css";
 export default function NavBar() {
+
+    function showMenu(){
+        document.querySelector(".navBarUl").classList.toggle("navBarUl_visibility");
+    }
+    
     return (
         <div >
             <div className="navBar"> 
                 <div className="logoNav">
                     <Link to="landing">
-                        <img src="https://i.ibb.co/FsvLdjd/1624241171268.png" alt="1624241171268" height="80px" />
+                        <img src={Logo} alt="Logo Franco peña fotografia"/>
                     </Link>
                 </div>
-                <div>
+                <button  className="hamburger" onClick={showMenu}>
+                    <i className="fas fa-bars"></i>
+                </button>
+                <div className="navBarMenu">
                     <ul className="navBarUl">
                         <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="/category/">Fotos</Link>
+                        <li><Link to="/category/">Fotos <span class="material-symbols-outlined expandMoreIcon">expand_more</span></Link>
                             <ul>
                                 <li><Link to="/category/autos">Autos</Link></li>
                                 <li><Link to="/category/fiesta">Fiesta</Link></li>
@@ -23,9 +32,11 @@ export default function NavBar() {
                         </li>
                         <li><Link to="introduce">Sobre mi</Link></li>
                         <li><Link to="contact">Contacto</Link></li>
-                        <li><Link to="/cart"><CartPhoto/></Link></li>
-                        <QA/>
                     </ul>
+                </div>
+                <div className="cartImg">
+                    <Link to="/cart"><CartPhoto/></Link>
+                    <QA/>
                 </div>
             </div>
         </div>

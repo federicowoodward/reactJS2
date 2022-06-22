@@ -1,20 +1,25 @@
 .navBar {
     background-color: black;
-    height: 82px;
-    width: 100%;   
+    width: 100%;  
+    height: 60px; 
     clear: both;
     content: "";
-    display: table;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navBar div {
+    margin: 0 20px;
 }
 .navBarUl {
-    float:  right;
+    float:  right; 
 }
 .navBarUl li {
     list-style: none;
-    margin-right: 40px;
-    padding: 17px 0;
+    margin-right: 46px;
     float: left;
     position: relative;
+    margin-top: 10px;
 }
 .navBarUl li a {
     text-decoration: none;
@@ -26,10 +31,13 @@
     display: block;
     content: "";
     background: #fff;
-    height: 5px;
-    bottom: 0;
     position: absolute;
+    height: 5px;
+    bottom: -15px;
     transition: width 0.4;
+}
+.navBarUl li ul li a::before {
+    bottom: 1px;
 }
 .navBarUl li a:hover::before {
     width: 100%;
@@ -44,8 +52,24 @@
     padding-left: 15px;
     z-index: 9999;
 }
+.navBarUl li ul li {
+    padding: 15px 0;
+}
 .logoNav {
-    width: 1px;
-    height: 1px;
-    margin: 2px 0 0 30px;
+    height: 40px;
+    width: 60px;
+}
+.logoNav img {
+    margin: 1.5vh 0 0 1.5vh;
+    width: 60px;
+}
+.cartImg img {
+    position: absolute;
+    height: 50px;
+    right: 0;
+    margin: 1vh 2vh 0 0;
+}
+.expandMoreIcon {
+    position: absolute;
+    top: 5px;
 }

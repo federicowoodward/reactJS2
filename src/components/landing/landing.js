@@ -5,10 +5,13 @@ export default function landing() {
     <div className="mainLanding">
         <div className="fondoFiltro"></div>
         <div className="landing">
-            <h1>Franco peña</h1>
-            <figure>
-                <h4>| Fotografia</h4>
-            </figure>
+            <div className="boxText">
+                <h1>Franco peña</h1>
+                <figure>
+                    <h4>| Fotografia</h4>
+                </figure>
+            </div>
+            <div className="boxButtonLanding">
                 <Link to="/category/">
                     <button>
                             <div className="fancy">
@@ -19,6 +22,7 @@ export default function landing() {
                             </div>
                     </button>
                 </Link>
+            </div>
         </div>
         <div className="relleno"></div>
     </div>
