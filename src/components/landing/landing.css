@@ -196,7 +196,7 @@
         font-size: 15px;
     }
 }
-@media (max-width: 321px) {
+@media (max-width: 331px) {
     .landing {
         position: absolute;
         top: calc(50% - 70px);

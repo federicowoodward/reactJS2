@@ -9,27 +9,19 @@
     justify-content: center;
     width: 100%;
 }
-@media (min-width: 2500px) {
+
+@media (min-width: 1441px) {
     .itemList {
-        columns: 23vh auto;
+        columns: 37vh auto;
         margin: 2.2vh 2.2vh;
     }
     .itemImg { 
         width:  100%;
     }
 }
-@media (max-width: 2500px) {
+@media (max-width: 1440px) {
     .itemList {
-        columns: 33vh auto;
-        margin: 2.2vh 2.2vh;
-    }
-    .itemImg { 
-        width:  100%;
-    }
-}
-@media (max-width: 1800px) {
-    .itemList {
-        columns: 33vh auto;
+        columns: 50vh auto;
         margin: 2.2vh 2.2vh;
     }
     .itemImg { 
@@ -37,7 +29,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .itemList {
         columns: 45vh auto;
         margin: 1.7vh 1.7vh;

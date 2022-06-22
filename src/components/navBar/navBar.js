@@ -22,16 +22,17 @@ export default function NavBar() {
                 </button>
                 <div className="navBarMenu">
                     <ul className="navBarUl">
-                        <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="/category/">Fotos <span className="material-symbols-outlined expandMoreIcon">expand_more</span></Link>
+                        <li><p><Link to="/landing" onClick={showMenu} >Inicio</Link></p></li>
+                        <li><p>Fotos<span className="material-symbols-outlined expandMoreIcon">expand_more</span></p> 
                             <ul>
-                                <li><Link to="/category/autos">Autos</Link></li>
-                                <li><Link to="/category/fiesta">Fiesta</Link></li>
-                                <li><Link to="/category/otros">Otros</Link></li>
+                            <li><Link to="/category/" onClick={showMenu}>Todos</Link></li>
+                                <li><Link to="/category/autos" onClick={showMenu} >Autos</Link></li>
+                                <li><Link to="/category/fiesta" onClick={showMenu} >Fiesta</Link></li>
+                                <li><Link to="/category/otros" onClick={showMenu} >Otros</Link></li>
                             </ul>
                         </li>
-                        <li><Link to="introduce">Sobre mi</Link></li>
-                        <li><Link to="contact">Contacto</Link></li>
+                        <li><p><Link to="introduce" onClick={showMenu} >Sobre mi</Link></p></li>
+                        <li><p><Link to="contact"  onClick={showMenu} >Contacto</Link></p></li>
                     </ul>
                 </div>
                 <div className="cartImg">
