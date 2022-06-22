@@ -7,7 +7,6 @@ import Upload from "./components/fileUpload/fileUpload.js";
 import CartContextProv from "./context/CartContext.js";
 import Contact from "./components/contact/contact.js";
 import Landing from './components/landing/landing.js';
-import Footer from './components/footer/footer.js';
 import NavBar from './components/navBar/navBar';
 import Order from "./components/order/order.js";
 import ShowOrder from "./components/order/showOrder.js";
@@ -37,7 +36,6 @@ export default function App() {
                     <Route path="/showOrder" element = { <ShowOrder />} />
                     <Route path="/*" element = { <Navigate to="/" replace /> } />
                 </Routes>
-                <Footer/> 
             </div>
         </CartContextProv>
       </BrowserRouter>
