@@ -31,9 +31,9 @@
     display: block;
     content: "";
     background: #fff;
+    position: absolute;
     height: 5px;
     bottom: -15px;
-    position: absolute;
     transition: width 0.4;
 }
 .navBarUl li ul li a::before {
@@ -68,4 +68,8 @@
     height: 50px;
     right: 0;
     margin: 1vh 2vh 0 0;
+}
+.expandMoreIcon {
+    position: absolute;
+    top: 5px;
 }

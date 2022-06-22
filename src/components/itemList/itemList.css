@@ -8,7 +8,16 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 2.2vh 2.2vh;
+}
+
+@media (max-width: 1800px) {
+    .itemList {
+        columns: 60vh auto;
+        margin: 2.2vh 2.2vh;
+    }
+    .itemImg { 
+        width:  100%;
+    }
 }
 
 @media (max-width: 1000px) {

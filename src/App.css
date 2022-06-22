@@ -45,16 +45,17 @@ h1,h2,h3,h4,h5,h6 {
         position: fixed;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.911);
-        width: 50vh;
+        width: 100%;
         height: 100%;        
         left: 10000px;
         z-index: 100;
     }
     .navBarUl li {
-        margin-top: 50px;
+        margin: 0;
+        padding-bottom: 2vh;
     }
     .navBarUl li a {
-        font-size: 35px;
+        font-size: 45px;
     }
     .navBarUl li a::before {
         background: transparent;
@@ -65,16 +66,17 @@ h1,h2,h3,h4,h5,h6 {
     .navBarUl li:hover ul {
         display: flex;
         flex-direction: column;
-        background-color:   rgba(0, 0, 0, 0);
         position: absolute;
-        top: -61px;
-        right: 0;
-        padding: 0;
-        margin: 0;
+        right: 35%;
+        background-color: black;
+        padding: 0 15px 15px 15px;
         z-index: 9999;
     }
+    .navBarUl li ul li {
+        padding: 0 5px 15px 5px;
+    }
     .navBarUl li:hover ul li a {
-        font-size: 30px;
+        font-size: 40px;
     }
     .navBarUl_visibility { 
         top: 0;
@@ -94,6 +96,10 @@ h1,h2,h3,h4,h5,h6 {
         height: 42px;
         margin: 1vh 50px 0 0;
     }
+    .expandMoreIcon {
+        top: 35px;
+        margin-left: 0.7vh;
+    }
 }
 
 @media (max-width: 550px) {
@@ -101,10 +107,10 @@ h1,h2,h3,h4,h5,h6 {
         height: 60px;
     }
     .navBarUl li a {
-        font-size: 20px;
+        font-size: 30px;
     }
     .navBarUl li:hover ul li a {
-        font-size: 17px;
+        font-size: 22px;
     }
     .navBar {
         height: 40px;
@@ -137,10 +143,10 @@ h1,h2,h3,h4,h5,h6 {
         height: 60px;
     }
     .navBarUl li a {
-        font-size: 30px;
+        font-size: 33px;
     }
     .navBarUl li:hover ul li a {
-        font-size: 20px;
+        font-size: 28px;
     }
    
     .navBar .hamburger {

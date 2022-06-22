@@ -23,7 +23,7 @@ export default function NavBar() {
                 <div className="navBarMenu">
                     <ul className="navBarUl">
                         <li><Link to="/landing">Inicio</Link></li>
-                        <li><Link to="/category/">Fotos</Link>
+                        <li><Link to="/category/">Fotos <span class="material-symbols-outlined expandMoreIcon">expand_more</span></Link>
                             <ul>
                                 <li><Link to="/category/autos">Autos</Link></li>
                                 <li><Link to="/category/fiesta">Fiesta</Link></li>
