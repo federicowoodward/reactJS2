@@ -43,6 +43,9 @@ export default function Login() {
                 <Link to="/deleter">
                     <button>Eliminar fotos</button>
                 </Link>
+                <Link to="/categoryManager">
+                    <button>Administrar categorias</button>
+                </Link>
             </div>
         );
     } else if (loginStatus === false) {

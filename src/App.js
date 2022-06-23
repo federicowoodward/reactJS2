@@ -14,6 +14,7 @@ import Login from "./components/login/login.js";
 import Cart from "./components/cart/cart.js";
 import './App.css';
 import Footer from "./components/footer/footer.js";
+import CategoryManager from './components/categoryManager/categoryManager.js';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
                         <Route path="/upload" element = { <Upload />} />
                         <Route path="/deleter" element = { < ItemDeleterContainer />} />
                         <Route path="/showOrder" element = { <ShowOrder />} />
+                        <Route path="/categoryManager" element = { <CategoryManager />} /> 
                         <Route path="/*" element = { <Navigate to="/" replace /> } />
                     </Routes>
                 </div>

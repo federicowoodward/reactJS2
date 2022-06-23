@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore} from "firebase/firestore";
+import { addDoc, collection, getFirestore, getDocs} from "firebase/firestore";
 import { createContext, useContext, useState } from "react";  
 const cartContext = createContext([]);
 export function UseCartContext() {
@@ -9,6 +9,7 @@ export default function CartContextProv({children}){
     const [photosList, setPhotoList] = useState([]);
     const [photosQuantityAdedd, setQA] = useState(0)
     const [orderReady, setOrder] = useState({});
+    const [currentNum, setCurrentNum] = useState(0);
 
     function isInCart(id){
         return photosList.some(photo => photo.photo.id === id)
@@ -66,7 +67,36 @@ export default function CartContextProv({children}){
 
         setOrder(orderid)
     }    
-           
+    function getCurrentNum(text){
+        const db = getFirestore()
+        let queryCollection = collection(db,"categories");
+        getDocs(queryCollection)
+        .then ( resp => {
+            if (resp.size === 0) {
+                setCurrentNum(0)
+            } else {
+                let array = []
+                array = resp.docs.map(item => item.data().myId)
+                setCurrentNum(Math.max(...array)) 
+                }})
+        .finally(modifyCategory(text))
+        .catch(err => console.log(err))
+    }
+
+    function modifyCategory(text) {
+        let category = {};
+        
+        category.myId =currentNum + 1;
+        category.text = text;
+
+        const db = getFirestore();
+        const queryCollection = collection(db, 'categories');
+        addDoc(queryCollection, category)
+        .catch(err => console.log(err))
+        .finally(() => category = {})
+    }
+
+
     return (
         <cartContext.Provider value={{
             photosList,
@@ -75,7 +105,9 @@ export default function CartContextProv({children}){
             clearPhoto,
             photosQuantityAdedd,
             generateOrder,
-            orderReady
+            orderReady,
+            getCurrentNum,
+            modifyCategory,
         }}>
             {children}
         </cartContext.Provider> 

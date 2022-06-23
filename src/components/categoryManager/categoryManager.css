@@ -1,0 +1,55 @@
+.categoryManager {
+    background-color: var(--main-background-color);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1vh;
+    border: 5px solid #000000;
+    border-radius: 10px;
+}
+.categoryManager .instructions h1,
+.categoryManager .instructions h4  {
+    text-align: center;
+}
+.categoryManager input {
+    margin: 1vh auto;
+    width: 30%; 
+    text-align: center;
+}
+.categoryManager span {
+    margin: 3vh;
+    background-color: rgb(177, 177, 177);
+    border: 2px solid black;
+    width: 50%;
+}
+
+.categoryManager button {
+    margin: 3vh auto;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #343a40;
+    box-shadow: 0 5px #212529;
+  }
+  .categoryManager button:hover {
+    box-shadow: 0 3px #212529;
+    top: 1px;
+  }
+  .categoryManager button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+  @media (max-width: 680px) {
+    .categoryManager {
+        margin: 3vh;
+    }
+  }

@@ -8,7 +8,7 @@ export default function Item({ photo, deleter }){
 
   return (
       <div className="flexItm">
-        <img className="itemImg" src={photo.img} alt={photo.client} title="Agregar imagen?" />
+        <img className="itemImg" src={photo.img} alt={photo.client} title="" />
         <button onClick={deleteItem}> Delete</button>
       </div>
     );   
