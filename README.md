@@ -2,25 +2,6 @@
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
-##  Scripts Disponibles:
-
-En el directorio del proyecto se puede ejecutar:
-
-### `npm start`
-
-Corre la aplicacion en el modo developer, que incluye refresh automaticamente al realizar cambios y errores en consola + consola
-especial de react.
-Abrir: [http://localhost:3000](http://localhost:3000) para ver en tu navegador.
-
-### `npm test`
-
-### `npm run build`
-
-### `npm run eject`
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-### `npm run build` fails to minify
-
 ## CSS Reglas utilizadas en este proyecto: 
 
 Color general para fondos de elementos:`--main-background-color`.
@@ -29,9 +10,11 @@ Convencion de clases: `camelCase`.
 
 ### Librerias y Apis usadas:
 
-[Sweet Alert 2 React "^5.0.0"](https://github.com/sweetalert2/sweetalert2-react-content).
-
-Botones y loaders de [universe.io](https://uiverse.io/).
+- React JS v-18.0.0 // Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página
+- React Router Dom v-6.3.0 // Biblioteca JavaScript de enrutamiento para React, utilizada construir interfaces de usuario.
+- Firebase v-9.8.2 // Plataforma para el desarrollo de aplicaciones web y aplicaciones móviles, se utilizó principalmente Firestore para la administración de la base de datos.
+- CSS3 // Lenguaje de diseño gráfico para definir y crear la presentación de los documentos.
+- sweetalert2 // [Sweet Alert 2 React "^5.0.0"](https://github.com/sweetalert2/sweetalert2-react-content).
 
 ### Firebase:
 Usos de firebase: 
