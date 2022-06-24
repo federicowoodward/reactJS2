@@ -5,8 +5,8 @@
     margin:35px;
 }
 .selectContainer {
-    background: rgb(219, 196, 196);
-    margin: 20px 14vh;
+    background: var(--main-background-color);
+    margin: auto;
     border: 2px solid black;
     padding: 5px;
 }

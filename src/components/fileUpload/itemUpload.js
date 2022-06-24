@@ -52,25 +52,25 @@ export default function ItemUpload({img, redirect}) {
 
       if (upload === true)  {
           return( 
-            <div>
+            <div className="itemUploadTrue">
                 <Link to="/upload">
-                    <p> Subir otra foto</p>
+                    <button> Subir otra foto</button>
                 </Link>
                 <Link to="/">
-                    <p> Volver al inicio</p>
+                    <button> Volver al inicio</button>
                 </Link>
               </div>
                 );
     } else if (upload === false) {
         return(
-            <div >
+            <div className="itemUpload">
                 <img src={img} alt="" className="imgUpload"/>
-                <form className="containerUpload">
+                <form>
                     <input name="alt" placeholder="Alt" type="text" onChange={(e) => generateItem(e)}/>
                     <input name="category" placeholder="Categoria" type="text" onChange={(e) => generateItem(e)}/>
                     <input name="client" placeholder="Cliente" type="text" onChange={(e) => generateItem(e)}/>
                     <button className="upload" onClick={uploadItem}>Subir</button>
-                    <button className="delete" onClick={deletePhoto}>Borrar foto</button>
+                    <button className="delete" id="delete" onClick={deletePhoto}>Borrar foto</button>
                 </form>
             </div>
         );

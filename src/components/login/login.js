@@ -3,6 +3,7 @@ import withReactContent from 'sweetalert2-react-content';
 import { Link } from "react-router-dom";
 import { useState }  from 'react';
 import Swal from "sweetalert2";
+import "./login.css";
 export default function Login() {
     const [login, setLogin] = useState({})
     const [user, generateUser] = useState({})
@@ -33,29 +34,33 @@ export default function Login() {
 
     if (loginStatus === true) {
         return (
-            <div  className="orderBody">
-                <h4>Login logrado</h4>
-                <p>Bienvenido: {user.user}</p>
-                <p>Opciones:</p>
-                <Link to="/upload">
-                    <button>Subir foto</button>
-                </Link>
-                <Link to="/deleter">
-                    <button>Eliminar fotos</button>
-                </Link>
-                <Link to="/categoryManager">
-                    <button>Administrar categorias</button>
-                </Link>
+            <div  className="loginBodyTrue">
+                <div className="text">
+                    <h4>Login logrado</h4>
+                    <p><strong>Bienvenido: </strong>{user.user}</p>
+                    <p>Opciones:</p>
+                </div>
+                <div className="buttons">
+                    <Link to="/upload">
+                        <button>Subir foto</button>
+                    </Link>
+                    <Link to="/deleter">
+                        <button>Eliminar fotos</button>
+                    </Link>
+                    <Link to="/categoryManager">
+                        <button>Administrar categorias</button>
+                    </Link>
+                </div>
             </div>
         );
     } else if (loginStatus === false) {
           return (
-            <div className="orderBody">
-                <form className="inputGroup" action="">
+            <div className="loginBody">
+                <form className="inputGroup">
                     <input name="user" onChange={(e) => generateLogin(e)} type="text" placeholder="Usuario" />
                     <input name="password" autoComplete="on" onChange={(e) => generateLogin(e)} type="password" placeholder="Contraseña" />
                 </form>
-                <button onClick={compareLogin}>Entrar</button>
+                <button onClick={compareLogin} className="btn">Entrar</button>
             </div>
     )
     }

@@ -1,0 +1,55 @@
+.loginBody, 
+.loginBodyTrue{
+    background-color: var(--main-background-color);
+    margin: auto;
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 5vh;
+}
+.loginBody .inputGroup input {
+    margin: 1vh;
+}
+.loginBodyTrue .text {
+    text-align: center;
+    padding: 2vh;
+    font-size: 20px;
+}
+.loginBodyTrue .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginBodyTrue button, 
+.loginBody button{
+    margin: 3vh auto;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #343a40;
+    box-shadow: 0 5px #212529;
+  }
+  .loginBodyTrue button:hover {
+    box-shadow: 0 3px #212529;
+    top: 1px;
+  }
+  .loginBodyTrue button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+  .loginBody button:hover {
+    box-shadow: 0 3px #212529;
+    top: 1px;
+  }
+  .loginBody button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }

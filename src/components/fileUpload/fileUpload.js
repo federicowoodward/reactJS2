@@ -33,10 +33,7 @@ export default function Upload(){
         }  
     }
     function redirectToUpload() {
-        setUpState(false);
-        setColor(0);
-        setProgress(0);
-        setImg();
+        window.location.reload()
     }
     function handleUpload(event) {
         const file = event.target.files[0];

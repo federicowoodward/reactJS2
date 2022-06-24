@@ -1,15 +1,71 @@
 .imgUpload {
-    height: 60vh;
+    height: 55vh;
     display: block;
+    margin: 0 auto;
 }
-.containerUpload {
-    margin: 20px 220px;
+.itemUpload form {
+    margin: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    margin: 2vh 20%;
 }
-.containerUpload button {
-    padding: 2px;
-    border: 2px solid black;
-    background-color: rgb(73, 79, 246);
+.itemUpload form input {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1vh;
+    border-top: 1px solid black;
+}
+.itemUpload button,
+.itemUploadTrue button{
+    margin: 3vh auto;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #343a40;
+    box-shadow: 0 5px #212529;
+  }
+  .itemUpload button:hover {
+    box-shadow: 0 3px #212529;
+    top: 1px;
+  }
+  .itemUpload button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+  .itemUploadTrue button:hover {
+    box-shadow: 0 3px #212529;
+    top: 1px;
+  }
+  .itemUploadTrue button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+#delete {
+    background: rgb(250, 57, 57);
+    box-shadow: 0 5px rgb(137, 32, 32);
+  }
+#delete:hover {
+    box-shadow: 0 3px rgb(137, 32, 32);
+  }
+#delete:active {
+    box-shadow: 0 0 rgb(137, 32, 32);
+  }
+
+.itemUploadTrue {
+    background-color: var(--main-background-color);
+    margin: 10vh 20%;
+    border: 4px solid black;
+    text-align: center;
+}
+.itemUploadTrue button { 
+    margin: 4vh;
 }
