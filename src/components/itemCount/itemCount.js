@@ -14,12 +14,14 @@ export default function ItemCount({initial , stock, onAdd}) {
         <div className="itemCount">
             <span className="photosAdded"><p>{count}</p></span>
             <div className="buttonsItemCount">
+                <span>
                 <button>
                     <span className="button_top" onClick={add}> + </span>
                 </button>
                 <button>
                     <span className="button_top" onClick={less}> - </span>
                 </button>
+                </span>
                 <button className="add">
                     <span className="button_top" onClick={addItem}> Añadir al carrito </span>
                 </button>

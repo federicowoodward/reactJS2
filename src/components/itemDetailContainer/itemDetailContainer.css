@@ -13,7 +13,6 @@
     border-radius: var(--button_radius);
     background: var(--button_outline_color);
     margin: 5px;
-    margin-left: 15%;
    }
    .detailContainer .button_top {
     display: block;

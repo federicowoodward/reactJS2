@@ -1,4 +1,5 @@
 import { React} from 'react';
+import "./itemDelete.css";
 
 export default function Item({ photo, deleter }){
 
@@ -7,9 +8,9 @@ export default function Item({ photo, deleter }){
     }
 
   return (
-      <div className="flexItm">
-        <img className="itemImg" src={photo.img} alt={photo.client} title="" />
-        <button onClick={deleteItem}> Delete</button>
+      <div className="itemDelete">
+        <img src={photo.img} alt={photo.client} title=""/>
+                <button onClick={deleteItem}> Delete</button>
       </div>
     );   
 };

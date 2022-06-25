@@ -1,3 +1,12 @@
+.buttonsItemCount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh;
+}
+.buttonsItemCount span {
+  text-align: center;
+}
 /* From uiverse.io by @Voxybuns */
 .buttonsItemCount button {
    --button_radius: 0.75em;
@@ -8,13 +17,7 @@
    border: none;
    border-radius: var(--button_radius);
    background: var(--button_outline_color);
-   margin: 5px;
-   margin-left: 15%;
   }
-  .buttonsItemCount .add {
-    font-size: 15px;
-    margin-left: 12%;
-  }  
   .button_top {
    display: block;
    box-sizing: border-box;
@@ -34,4 +37,5 @@
   }
   .photosAdded {
     color: white;
+    font-size: 25px;
   }

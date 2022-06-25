@@ -34,8 +34,6 @@ export default function NavBar() {
         .finally( setTimeout(() => sessionStorage.setItem("firstReload", false), 1000))
     }
 
-    // console.log(categoryList.map(item => item.text))
-  
     return (
         <div>
             <div className="navBar"> 

@@ -1,0 +1,28 @@
+.itemDelete img {
+    width: 100%;
+}
+
+.itemDelete button {
+    margin: auto;
+    margin-bottom: 45px;
+    height: 35px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 3px solid #d90429;
+    background: #d90429;
+}
+.itemDelete button:hover {
+    background: #fff;
+    color: #d90429
+}
+.itemDelete {
+    display: flex;
+    flex-direction: column;
+    margin: 2vh;
+}
