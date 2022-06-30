@@ -6,8 +6,8 @@
     padding: 0px;
 }
 body {
-    background-color: rgb(25, 21, 21);
-    --main-background-color: rgb(118, 118, 118);      
+    background-color: #B68D40;
+    --main-background-color: #306b58;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Alegreya Sans', sans-serif;
