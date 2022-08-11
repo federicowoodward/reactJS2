@@ -29,13 +29,16 @@ export default function CartContextProv({children}){
     function clearCart() {
         udapteCart([]);
     }
+    
     function clearPhoto(id) {
-        let i = photosList.findIndex(photo => photo.id === id);
-        const newPhotoList = photosList;
-        newPhotoList.splice(i,1);
-        udapteCart(newPhotoList);
+        let newPhotoList = photosList;
+      
+        const result = newPhotoList.filter((item) => item.photo.id !== id);
+
+        udapteCart(result);
     }
     function udapteCart(array) {
+        console.log(array)
         setPhotoList(array);
         let QA = 0;
         for(let i = 0; i < array.length; i++) {
