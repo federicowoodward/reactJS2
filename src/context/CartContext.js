@@ -38,7 +38,6 @@ export default function CartContextProv({children}){
         udapteCart(result);
     }
     function udapteCart(array) {
-        console.log(array)
         setPhotoList(array);
         let QA = 0;
         for(let i = 0; i < array.length; i++) {
